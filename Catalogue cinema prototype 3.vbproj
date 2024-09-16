@@ -107,6 +107,12 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="ReccomendationsStart.Designer.vb">
+      <DependentUpon>ReccomendationsStart.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ReccomendationsStart.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Registration.Designer.vb">
       <DependentUpon>Registration.vb</DependentUpon>
     </Compile>
@@ -136,6 +142,9 @@
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="ReccomendationsStart.resx">
+      <DependentUpon>ReccomendationsStart.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Registration.resx">
       <DependentUpon>Registration.vb</DependentUpon>
     </EmbeddedResource>
@@ -155,7 +164,6 @@
     </None>
     <None Include="App.config" />
     <None Include="packages.config" />
-    <None Include="Users.Json" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\available.png" />

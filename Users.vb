@@ -10,6 +10,8 @@ Public Class User
     Private Property Email As String
     Private Property IsAdmin As Boolean
 
+
+
     Public Sub New(UserID, HashedPassword, GivenUsername, GivenFname, GivenLname, GivenEmail)
         UserID = UserID
         Password = HashedPassword 'password is hashed before it is stored in the database

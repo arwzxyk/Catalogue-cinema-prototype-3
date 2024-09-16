@@ -74,15 +74,16 @@ Public Class Registration
         Dim givenLname As String = LNameTxt.Text
         Dim givenEmail As String = EmailTxt.Text
         Dim hashedPass As String = Encoding.UTF8.GetString((Sha256Hash(PasswordTxt.Text)))
-        users.Add(New User(indexID, givenUsername, hashedPass, givenFname, givenLname, givenEmail))
+        SharedData.CurrentUser = New User(indexID, givenUsername, hashedPass, givenFname, givenLname, givenEmail)
+        users.Add(SharedData.CurrentUser)
 
         SaveToJson(users, "Users.json")
-        SharedData.userId = indexID
+
         SharedData.loggedIn = True
         MsgBox("Account Registered Succesfully")
         Dim form As New Form1
-        Form1.Show()
-        Form1.Refresh()
+        form.Show()
+        form.Refresh()
         Me.Close()
     End Sub
 

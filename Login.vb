@@ -36,7 +36,7 @@ Public Class Login
                 MsgBox("Login success")
                 Dim CinemaForm As New Form1
                 SharedData.loggedIn = True
-                SharedData.userId = userID
+                SharedData.CurrentUser = users(userID)
                 CinemaForm.Show()
 
             Else
