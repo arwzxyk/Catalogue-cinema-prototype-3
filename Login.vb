@@ -32,7 +32,7 @@ Public Class Login
         Dim userID As Integer = BinarySearch(users, UsernameTxt.Text)
 
         If userID <> -1 Then
-            If Sha256Hash(PasswordTxt.Text) = users(userID).GetPasswordHash Then
+            If Sha256Hash(PasswordTxt.Text) = users(userID).Password Then
                 MsgBox("Login success")
                 Dim CinemaForm As New Form1
                 SharedData.loggedIn = True
@@ -53,7 +53,7 @@ Public Class Login
 
         While low <= high
             Dim mid As Integer = low + (high - low) \ 2
-            Dim comparison As Integer = String.Compare(users(mid).GetUsername(), username)
+            Dim comparison As Integer = String.Compare(users(mid).username(), username)
 
             If comparison = 0 Then
                 Return mid ' Username found

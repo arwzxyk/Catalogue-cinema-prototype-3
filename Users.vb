@@ -2,13 +2,14 @@
 Imports Newtonsoft.Json
 
 Public Class User
-    Private Property UserID As Integer
-    Private Property username As String
-    Private Property Password As String
-    Private Property Fname As String
-    Private Property Lname As String
-    Private Property Email As String
-    Private Property IsAdmin As Boolean
+    Public Property UserID As Integer
+    Public Property username As String
+    Public Property Password As String
+    Public Property Fname As String
+    Public Property Lname As String
+    Public Property Email As String
+    Public Property IsAdmin As Boolean
+
 
 
 
@@ -21,25 +22,8 @@ Public Class User
         Email = GivenEmail
         IsAdmin = False
     End Sub
-    'get functions
-    Public Function GetPasswordHash()
-        Return Password
-    End Function
-    Public Function GetUsername()
-        Return username
-    End Function
-    Public Function GetFname()
-        Return Fname
-    End Function
-    Public Function GetLName()
-        Return Lname
-    End Function
-    Public Function GetEmail()
-        Return Email
-    End Function
-    Public Sub SetAdmin()
-        IsAdmin = True
-    End Sub
+
+
 
     Public Function ToJson() As String 'when i serialise a user, to keep the attributes private but to be able to write to json, we create public json properties for each private property
         Dim jsonObject As New JObject(

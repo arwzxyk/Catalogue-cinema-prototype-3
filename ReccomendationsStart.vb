@@ -1,7 +1,7 @@
 ﻿Public Class ReccomendationsStart
 
     Private Sub ReccomendationsStart_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Label1.Text = ("Welcome " & SharedData.CurrentUser.GetUsername & "
+        Label1.Text = ("Welcome " & SharedData.CurrentUser.username & "
 please set your preferences for each genre.")
 
     End Sub
@@ -13,5 +13,7 @@ please set your preferences for each genre.")
         Dim RomancePref As Double = RomanceTrkBar.Value
         Dim HorrorPref As Double = HorrorTrkBar.Value
         Dim ThrillerPref As Double = ThrillerTrkBar.Value
+        FormManager.ShowForm(Of Form1)()
+        Me.Close()
     End Sub
 End Class

@@ -1,7 +1,7 @@
 ﻿Imports System.Net.Http
 Imports Newtonsoft.Json.Linq
 Public Class Form1
-
+    Dim movies As List(Of movie) = LoadFromJson(Of List(Of movie))("movies.json")
 
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -16,8 +16,9 @@ Public Class Form1
 or press Register, to register with us today"
             TabPage4.Refresh()
         End If
-
-
+        'Dim labelCount As Integer = TabPage1.Controls.OfType(Of Label)().Count()
+        Label1.Text = movies(0).Title
+        PictureBox1.ImageLocation = movies(0).Poster
     End Sub
 
     Private Sub LgnBtn_Click(sender As Object, e As EventArgs) Handles LgnBtn.Click

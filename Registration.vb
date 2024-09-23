@@ -61,6 +61,9 @@ Public Class Registration
     'Instantiation
     Private Sub RegAccBtn_Click(sender As Object, e As EventArgs) Handles RegAccBtn.Click
         Dim users As List(Of User) = LoadFromJson(Of List(Of User))("users.json")
+        If users Is Nothing Then
+            users = New List(Of User)()
+        End If
         Dim indexID As Integer = users.Count 'automatically at the end of the list
         For i As Integer = 0 To users.Count - 1
             If users(i) Is Nothing Then
@@ -87,7 +90,5 @@ Public Class Registration
         Me.Close()
     End Sub
 
-    Private Sub Registration_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
-    End Sub
 End Class
