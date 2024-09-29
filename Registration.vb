@@ -90,5 +90,8 @@ Public Class Registration
         Me.Close()
     End Sub
 
+    Private Sub Registration_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Me.Select()
 
+    End Sub
 End Class

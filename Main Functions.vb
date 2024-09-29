@@ -31,4 +31,16 @@ Module Main_Functions
         Dim hash = New System.Security.Cryptography.SHA256Managed().ComputeHash(System.Text.Encoding.UTF8.GetBytes(Password))
         Return hash
     End Function
+
+    Sub ShowForm(Of T As {Form, New})() 'this is used to show previously hidden forms, useful to go back
+        For Each form As Form In Application.OpenForms
+            If TypeOf form Is T Then
+                form.BringToFront()
+                Return
+            End If
+        Next
+
+        Dim formInstance As New T()
+        formInstance.Show()
+    End Sub
 End Module

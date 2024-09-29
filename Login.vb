@@ -29,7 +29,14 @@ Public Class Login
 
     Private Sub SigninBtn_Click(sender As Object, e As EventArgs) Handles SigninBtn.Click
         Dim users As List(Of User) = LoadFromJson(Of List(Of User))("users.json")
-        Dim userID As Integer = BinarySearch(users, UsernameTxt.Text)
+        Dim userID As Integer = 0
+        If users Is Nothing Then
+            users = New List(Of User)()
+
+        Else
+            userID = BinarySearch(users, UsernameTxt.Text)
+        End If
+
 
         If userID <> -1 Then
             If Sha256Hash(PasswordTxt.Text) = users(userID).Password Then
@@ -67,4 +74,8 @@ Public Class Login
         Return -1 ' Username not found
     End Function
 
+    Private Sub Login_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Me.Select()
+
+    End Sub
 End Class

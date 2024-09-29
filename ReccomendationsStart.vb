@@ -13,7 +13,7 @@ please set your preferences for each genre.")
         Dim RomancePref As Double = RomanceTrkBar.Value
         Dim HorrorPref As Double = HorrorTrkBar.Value
         Dim ThrillerPref As Double = ThrillerTrkBar.Value
-        FormManager.ShowForm(Of Form1)()
+        ShowForm(Of Form1)()
         Me.Close()
     End Sub
 End Class
