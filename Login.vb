@@ -28,7 +28,7 @@ Public Class Login
     End Sub
 
     Private Sub SigninBtn_Click(sender As Object, e As EventArgs) Handles SigninBtn.Click
-        Dim users As List(Of User) = LoadFromJson(Of List(Of User))("users.json")
+        Dim users As List(Of User) = LoadFromJson(Of List(Of User))("Database\users.json")
         Dim userID As Integer = 0
         If users Is Nothing Then
             users = New List(Of User)()

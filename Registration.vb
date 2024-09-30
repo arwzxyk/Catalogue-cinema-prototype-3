@@ -60,7 +60,7 @@ Public Class Registration
 
     'Instantiation
     Private Sub RegAccBtn_Click(sender As Object, e As EventArgs) Handles RegAccBtn.Click
-        Dim users As List(Of User) = LoadFromJson(Of List(Of User))("users.json")
+        Dim users As List(Of User) = LoadFromJson(Of List(Of User))("Database\users.json")
         If users Is Nothing Then
             users = New List(Of User)()
         End If

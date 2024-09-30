@@ -1,7 +1,7 @@
 ﻿Imports System.Net.Http
 Imports Newtonsoft.Json.Linq
 Public Class Form1
-    Dim movies As List(Of movie) = LoadFromJson(Of List(Of movie))("C:\Users\wenes\GitHub\Catalogue-cinema-prototype-3\movies.json")
+    Dim movies As List(Of movie) = LoadFromJson(Of List(Of movie))("Database\movies.json")
     Dim selectMovieID As Integer = -1 'set to indicate no movie is selected
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load

@@ -28,32 +28,24 @@ Partial Class Form1
         Me.Label11 = New System.Windows.Forms.Label()
         Me.Panel10 = New System.Windows.Forms.Panel()
         Me.Label12 = New System.Windows.Forms.Label()
-        Me.PictureBox9 = New System.Windows.Forms.PictureBox()
         Me.Panel11 = New System.Windows.Forms.Panel()
         Me.Label13 = New System.Windows.Forms.Label()
-        Me.PictureBox10 = New System.Windows.Forms.PictureBox()
         Me.Panel12 = New System.Windows.Forms.Panel()
         Me.Label14 = New System.Windows.Forms.Label()
-        Me.PictureBox11 = New System.Windows.Forms.PictureBox()
         Me.Panel13 = New System.Windows.Forms.Panel()
         Me.Label15 = New System.Windows.Forms.Label()
-        Me.PictureBox12 = New System.Windows.Forms.PictureBox()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.Panel6 = New System.Windows.Forms.Panel()
         Me.Label6 = New System.Windows.Forms.Label()
-        Me.PictureBox5 = New System.Windows.Forms.PictureBox()
         Me.Panel4 = New System.Windows.Forms.Panel()
         Me.Panel7 = New System.Windows.Forms.Panel()
         Me.Label7 = New System.Windows.Forms.Label()
-        Me.PictureBox6 = New System.Windows.Forms.PictureBox()
         Me.Panel8 = New System.Windows.Forms.Panel()
         Me.Label8 = New System.Windows.Forms.Label()
-        Me.PictureBox7 = New System.Windows.Forms.PictureBox()
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.Panel9 = New System.Windows.Forms.Panel()
         Me.Label10 = New System.Windows.Forms.Label()
-        Me.PictureBox8 = New System.Windows.Forms.PictureBox()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Panel5 = New System.Windows.Forms.Panel()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
@@ -66,37 +58,46 @@ Partial Class Form1
         Me.ScreenTime3Lbl = New System.Windows.Forms.Label()
         Me.Label19 = New System.Windows.Forms.Label()
         Me.Panel14 = New System.Windows.Forms.Panel()
-        Me.PictureBox13 = New System.Windows.Forms.PictureBox()
         Me.Label18 = New System.Windows.Forms.Label()
         Me.Label17 = New System.Windows.Forms.Label()
         Me.TabPage4 = New System.Windows.Forms.TabPage()
         Me.UserLabel = New System.Windows.Forms.Label()
         Me.RegBtn = New System.Windows.Forms.Button()
         Me.LgnBtn = New System.Windows.Forms.Button()
+        Me.PictureBox9 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox10 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox11 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox12 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox5 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox6 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox7 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox8 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox13 = New System.Windows.Forms.PictureBox()
+        Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.Panel1.SuspendLayout()
         Me.Panel10.SuspendLayout()
-        CType(Me.PictureBox9, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel11.SuspendLayout()
-        CType(Me.PictureBox10, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel12.SuspendLayout()
-        CType(Me.PictureBox11, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel13.SuspendLayout()
-        CType(Me.PictureBox12, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel6.SuspendLayout()
-        CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel7.SuspendLayout()
-        CType(Me.PictureBox6, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel8.SuspendLayout()
-        CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel9.SuspendLayout()
-        CType(Me.PictureBox8, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabPage2.SuspendLayout()
         Me.TabPage3.SuspendLayout()
         Me.Panel14.SuspendLayout()
-        CType(Me.PictureBox13, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabPage4.SuspendLayout()
+        CType(Me.PictureBox9, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox10, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox11, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox12, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox6, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox8, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox13, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'TabControl1
@@ -152,7 +153,7 @@ Partial Class Form1
         '
         Me.Label11.AutoSize = True
         Me.Label11.Font = New System.Drawing.Font("Times New Roman", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label11.Location = New System.Drawing.Point(21, 501)
+        Me.Label11.Location = New System.Drawing.Point(21, 511)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(85, 26)
         Me.Label11.TabIndex = 14
@@ -162,7 +163,7 @@ Partial Class Form1
         '
         Me.Panel10.Controls.Add(Me.Label12)
         Me.Panel10.Controls.Add(Me.PictureBox9)
-        Me.Panel10.Location = New System.Drawing.Point(880, 541)
+        Me.Panel10.Location = New System.Drawing.Point(880, 551)
         Me.Panel10.Name = "Panel10"
         Me.Panel10.Size = New System.Drawing.Size(260, 163)
         Me.Panel10.TabIndex = 13
@@ -177,20 +178,11 @@ Partial Class Form1
         Me.Label12.TabIndex = 1
         Me.Label12.Text = "Movie 4"
         '
-        'PictureBox9
-        '
-        Me.PictureBox9.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.PictureBox9.Location = New System.Drawing.Point(3, 3)
-        Me.PictureBox9.Name = "PictureBox9"
-        Me.PictureBox9.Size = New System.Drawing.Size(253, 117)
-        Me.PictureBox9.TabIndex = 1
-        Me.PictureBox9.TabStop = False
-        '
         'Panel11
         '
         Me.Panel11.Controls.Add(Me.Label13)
         Me.Panel11.Controls.Add(Me.PictureBox10)
-        Me.Panel11.Location = New System.Drawing.Point(597, 541)
+        Me.Panel11.Location = New System.Drawing.Point(597, 551)
         Me.Panel11.Name = "Panel11"
         Me.Panel11.Size = New System.Drawing.Size(260, 163)
         Me.Panel11.TabIndex = 11
@@ -205,20 +197,11 @@ Partial Class Form1
         Me.Label13.TabIndex = 1
         Me.Label13.Text = "Movie 3"
         '
-        'PictureBox10
-        '
-        Me.PictureBox10.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.PictureBox10.Location = New System.Drawing.Point(3, 3)
-        Me.PictureBox10.Name = "PictureBox10"
-        Me.PictureBox10.Size = New System.Drawing.Size(253, 117)
-        Me.PictureBox10.TabIndex = 1
-        Me.PictureBox10.TabStop = False
-        '
         'Panel12
         '
         Me.Panel12.Controls.Add(Me.Label14)
         Me.Panel12.Controls.Add(Me.PictureBox11)
-        Me.Panel12.Location = New System.Drawing.Point(312, 541)
+        Me.Panel12.Location = New System.Drawing.Point(312, 551)
         Me.Panel12.Name = "Panel12"
         Me.Panel12.Size = New System.Drawing.Size(260, 163)
         Me.Panel12.TabIndex = 12
@@ -233,20 +216,11 @@ Partial Class Form1
         Me.Label14.TabIndex = 1
         Me.Label14.Text = "Movie 2"
         '
-        'PictureBox11
-        '
-        Me.PictureBox11.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.PictureBox11.Location = New System.Drawing.Point(3, 3)
-        Me.PictureBox11.Name = "PictureBox11"
-        Me.PictureBox11.Size = New System.Drawing.Size(253, 117)
-        Me.PictureBox11.TabIndex = 1
-        Me.PictureBox11.TabStop = False
-        '
         'Panel13
         '
         Me.Panel13.Controls.Add(Me.Label15)
         Me.Panel13.Controls.Add(Me.PictureBox12)
-        Me.Panel13.Location = New System.Drawing.Point(23, 541)
+        Me.Panel13.Location = New System.Drawing.Point(23, 551)
         Me.Panel13.Name = "Panel13"
         Me.Panel13.Size = New System.Drawing.Size(260, 163)
         Me.Panel13.TabIndex = 10
@@ -261,20 +235,11 @@ Partial Class Form1
         Me.Label15.TabIndex = 1
         Me.Label15.Text = "Movie 1"
         '
-        'PictureBox12
-        '
-        Me.PictureBox12.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.PictureBox12.Location = New System.Drawing.Point(3, 3)
-        Me.PictureBox12.Name = "PictureBox12"
-        Me.PictureBox12.Size = New System.Drawing.Size(253, 117)
-        Me.PictureBox12.TabIndex = 1
-        Me.PictureBox12.TabStop = False
-        '
         'Label5
         '
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Times New Roman", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(18, 265)
+        Me.Label5.Location = New System.Drawing.Point(18, 275)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(85, 26)
         Me.Label5.TabIndex = 9
@@ -284,7 +249,7 @@ Partial Class Form1
         '
         Me.Label9.AutoSize = True
         Me.Label9.Font = New System.Drawing.Font("Times New Roman", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label9.Location = New System.Drawing.Point(18, 18)
+        Me.Label9.Location = New System.Drawing.Point(18, 28)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(86, 26)
         Me.Label9.TabIndex = 9
@@ -294,7 +259,7 @@ Partial Class Form1
         '
         Me.Panel6.Controls.Add(Me.Label6)
         Me.Panel6.Controls.Add(Me.PictureBox5)
-        Me.Panel6.Location = New System.Drawing.Point(877, 305)
+        Me.Panel6.Location = New System.Drawing.Point(877, 315)
         Me.Panel6.Name = "Panel6"
         Me.Panel6.Size = New System.Drawing.Size(260, 163)
         Me.Panel6.TabIndex = 8
@@ -309,18 +274,9 @@ Partial Class Form1
         Me.Label6.TabIndex = 1
         Me.Label6.Text = "Movie 4"
         '
-        'PictureBox5
-        '
-        Me.PictureBox5.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.PictureBox5.Location = New System.Drawing.Point(3, 3)
-        Me.PictureBox5.Name = "PictureBox5"
-        Me.PictureBox5.Size = New System.Drawing.Size(253, 117)
-        Me.PictureBox5.TabIndex = 1
-        Me.PictureBox5.TabStop = False
-        '
         'Panel4
         '
-        Me.Panel4.Location = New System.Drawing.Point(877, 58)
+        Me.Panel4.Location = New System.Drawing.Point(877, 68)
         Me.Panel4.Name = "Panel4"
         Me.Panel4.Size = New System.Drawing.Size(260, 163)
         Me.Panel4.TabIndex = 8
@@ -329,7 +285,7 @@ Partial Class Form1
         '
         Me.Panel7.Controls.Add(Me.Label7)
         Me.Panel7.Controls.Add(Me.PictureBox6)
-        Me.Panel7.Location = New System.Drawing.Point(594, 305)
+        Me.Panel7.Location = New System.Drawing.Point(594, 315)
         Me.Panel7.Name = "Panel7"
         Me.Panel7.Size = New System.Drawing.Size(260, 163)
         Me.Panel7.TabIndex = 6
@@ -344,20 +300,11 @@ Partial Class Form1
         Me.Label7.TabIndex = 1
         Me.Label7.Text = "Movie 3"
         '
-        'PictureBox6
-        '
-        Me.PictureBox6.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.PictureBox6.Location = New System.Drawing.Point(3, 3)
-        Me.PictureBox6.Name = "PictureBox6"
-        Me.PictureBox6.Size = New System.Drawing.Size(253, 117)
-        Me.PictureBox6.TabIndex = 1
-        Me.PictureBox6.TabStop = False
-        '
         'Panel8
         '
         Me.Panel8.Controls.Add(Me.Label8)
         Me.Panel8.Controls.Add(Me.PictureBox7)
-        Me.Panel8.Location = New System.Drawing.Point(309, 305)
+        Me.Panel8.Location = New System.Drawing.Point(309, 315)
         Me.Panel8.Name = "Panel8"
         Me.Panel8.Size = New System.Drawing.Size(260, 163)
         Me.Panel8.TabIndex = 7
@@ -372,18 +319,9 @@ Partial Class Form1
         Me.Label8.TabIndex = 1
         Me.Label8.Text = "Movie 2"
         '
-        'PictureBox7
-        '
-        Me.PictureBox7.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.PictureBox7.Location = New System.Drawing.Point(3, 3)
-        Me.PictureBox7.Name = "PictureBox7"
-        Me.PictureBox7.Size = New System.Drawing.Size(253, 117)
-        Me.PictureBox7.TabIndex = 1
-        Me.PictureBox7.TabStop = False
-        '
         'Panel3
         '
-        Me.Panel3.Location = New System.Drawing.Point(594, 58)
+        Me.Panel3.Location = New System.Drawing.Point(594, 68)
         Me.Panel3.Name = "Panel3"
         Me.Panel3.Size = New System.Drawing.Size(260, 163)
         Me.Panel3.TabIndex = 6
@@ -392,7 +330,7 @@ Partial Class Form1
         '
         Me.Panel9.Controls.Add(Me.Label10)
         Me.Panel9.Controls.Add(Me.PictureBox8)
-        Me.Panel9.Location = New System.Drawing.Point(20, 305)
+        Me.Panel9.Location = New System.Drawing.Point(20, 315)
         Me.Panel9.Name = "Panel9"
         Me.Panel9.Size = New System.Drawing.Size(260, 163)
         Me.Panel9.TabIndex = 5
@@ -407,25 +345,16 @@ Partial Class Form1
         Me.Label10.TabIndex = 1
         Me.Label10.Text = "Movie 1"
         '
-        'PictureBox8
-        '
-        Me.PictureBox8.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.PictureBox8.Location = New System.Drawing.Point(3, 3)
-        Me.PictureBox8.Name = "PictureBox8"
-        Me.PictureBox8.Size = New System.Drawing.Size(253, 117)
-        Me.PictureBox8.TabIndex = 1
-        Me.PictureBox8.TabStop = False
-        '
         'Panel2
         '
-        Me.Panel2.Location = New System.Drawing.Point(309, 58)
+        Me.Panel2.Location = New System.Drawing.Point(309, 68)
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(260, 163)
         Me.Panel2.TabIndex = 7
         '
         'Panel5
         '
-        Me.Panel5.Location = New System.Drawing.Point(20, 58)
+        Me.Panel5.Location = New System.Drawing.Point(20, 68)
         Me.Panel5.Name = "Panel5"
         Me.Panel5.Size = New System.Drawing.Size(260, 163)
         Me.Panel5.TabIndex = 5
@@ -461,6 +390,7 @@ Partial Class Form1
         '
         'TabPage3
         '
+        Me.TabPage3.Controls.Add(Me.DateTimePicker1)
         Me.TabPage3.Controls.Add(Me.BookSeatBtn)
         Me.TabPage3.Controls.Add(Me.ScreenTime1Lbl)
         Me.TabPage3.Controls.Add(Me.ScreenTime2Lbl)
@@ -533,14 +463,6 @@ Partial Class Form1
         Me.Panel14.Size = New System.Drawing.Size(276, 193)
         Me.Panel14.TabIndex = 2
         '
-        'PictureBox13
-        '
-        Me.PictureBox13.Location = New System.Drawing.Point(3, 3)
-        Me.PictureBox13.Name = "PictureBox13"
-        Me.PictureBox13.Size = New System.Drawing.Size(270, 140)
-        Me.PictureBox13.TabIndex = 3
-        Me.PictureBox13.TabStop = False
-        '
         'Label18
         '
         Me.Label18.AutoSize = True
@@ -601,6 +523,95 @@ Partial Class Form1
         Me.LgnBtn.Text = "Login"
         Me.LgnBtn.UseVisualStyleBackColor = True
         '
+        'PictureBox9
+        '
+        Me.PictureBox9.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.PictureBox9.Location = New System.Drawing.Point(3, 3)
+        Me.PictureBox9.Name = "PictureBox9"
+        Me.PictureBox9.Size = New System.Drawing.Size(253, 117)
+        Me.PictureBox9.TabIndex = 1
+        Me.PictureBox9.TabStop = False
+        '
+        'PictureBox10
+        '
+        Me.PictureBox10.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.PictureBox10.Location = New System.Drawing.Point(3, 3)
+        Me.PictureBox10.Name = "PictureBox10"
+        Me.PictureBox10.Size = New System.Drawing.Size(253, 117)
+        Me.PictureBox10.TabIndex = 1
+        Me.PictureBox10.TabStop = False
+        '
+        'PictureBox11
+        '
+        Me.PictureBox11.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.PictureBox11.Location = New System.Drawing.Point(3, 3)
+        Me.PictureBox11.Name = "PictureBox11"
+        Me.PictureBox11.Size = New System.Drawing.Size(253, 117)
+        Me.PictureBox11.TabIndex = 1
+        Me.PictureBox11.TabStop = False
+        '
+        'PictureBox12
+        '
+        Me.PictureBox12.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.PictureBox12.Location = New System.Drawing.Point(3, 3)
+        Me.PictureBox12.Name = "PictureBox12"
+        Me.PictureBox12.Size = New System.Drawing.Size(253, 117)
+        Me.PictureBox12.TabIndex = 1
+        Me.PictureBox12.TabStop = False
+        '
+        'PictureBox5
+        '
+        Me.PictureBox5.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.PictureBox5.Location = New System.Drawing.Point(3, 3)
+        Me.PictureBox5.Name = "PictureBox5"
+        Me.PictureBox5.Size = New System.Drawing.Size(253, 117)
+        Me.PictureBox5.TabIndex = 1
+        Me.PictureBox5.TabStop = False
+        '
+        'PictureBox6
+        '
+        Me.PictureBox6.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.PictureBox6.Location = New System.Drawing.Point(3, 3)
+        Me.PictureBox6.Name = "PictureBox6"
+        Me.PictureBox6.Size = New System.Drawing.Size(253, 117)
+        Me.PictureBox6.TabIndex = 1
+        Me.PictureBox6.TabStop = False
+        '
+        'PictureBox7
+        '
+        Me.PictureBox7.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.PictureBox7.Location = New System.Drawing.Point(3, 3)
+        Me.PictureBox7.Name = "PictureBox7"
+        Me.PictureBox7.Size = New System.Drawing.Size(253, 117)
+        Me.PictureBox7.TabIndex = 1
+        Me.PictureBox7.TabStop = False
+        '
+        'PictureBox8
+        '
+        Me.PictureBox8.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.PictureBox8.Location = New System.Drawing.Point(3, 3)
+        Me.PictureBox8.Name = "PictureBox8"
+        Me.PictureBox8.Size = New System.Drawing.Size(253, 117)
+        Me.PictureBox8.TabIndex = 1
+        Me.PictureBox8.TabStop = False
+        '
+        'PictureBox13
+        '
+        Me.PictureBox13.Location = New System.Drawing.Point(3, 3)
+        Me.PictureBox13.Name = "PictureBox13"
+        Me.PictureBox13.Size = New System.Drawing.Size(270, 140)
+        Me.PictureBox13.TabIndex = 3
+        Me.PictureBox13.TabStop = False
+        '
+        'DateTimePicker1
+        '
+        Me.DateTimePicker1.AllowDrop = True
+        Me.DateTimePicker1.CustomFormat = ""
+        Me.DateTimePicker1.Location = New System.Drawing.Point(471, 65)
+        Me.DateTimePicker1.Name = "DateTimePicker1"
+        Me.DateTimePicker1.Size = New System.Drawing.Size(200, 22)
+        Me.DateTimePicker1.TabIndex = 10
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -616,37 +627,37 @@ Partial Class Form1
         Me.Panel1.PerformLayout()
         Me.Panel10.ResumeLayout(False)
         Me.Panel10.PerformLayout()
-        CType(Me.PictureBox9, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel11.ResumeLayout(False)
         Me.Panel11.PerformLayout()
-        CType(Me.PictureBox10, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel12.ResumeLayout(False)
         Me.Panel12.PerformLayout()
-        CType(Me.PictureBox11, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel13.ResumeLayout(False)
         Me.Panel13.PerformLayout()
-        CType(Me.PictureBox12, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel6.ResumeLayout(False)
         Me.Panel6.PerformLayout()
-        CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel7.ResumeLayout(False)
         Me.Panel7.PerformLayout()
-        CType(Me.PictureBox6, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel8.ResumeLayout(False)
         Me.Panel8.PerformLayout()
-        CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel9.ResumeLayout(False)
         Me.Panel9.PerformLayout()
-        CType(Me.PictureBox8, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabPage2.ResumeLayout(False)
         Me.TabPage2.PerformLayout()
         Me.TabPage3.ResumeLayout(False)
         Me.TabPage3.PerformLayout()
         Me.Panel14.ResumeLayout(False)
         Me.Panel14.PerformLayout()
-        CType(Me.PictureBox13, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabPage4.ResumeLayout(False)
         Me.TabPage4.PerformLayout()
+        CType(Me.PictureBox9, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox10, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox11, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox12, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox6, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox8, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox13, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -702,4 +713,5 @@ Partial Class Form1
     Friend WithEvents ScreenTime2Lbl As Label
     Friend WithEvents ScreenTime3Lbl As Label
     Friend WithEvents BookSeatBtn As Button
+    Friend WithEvents DateTimePicker1 As DateTimePicker
 End Class

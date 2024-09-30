@@ -83,6 +83,30 @@
     <Compile Include="Admin.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="AdminBookingsMenu.Designer.vb">
+      <DependentUpon>AdminBookingsMenu.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AdminBookingsMenu.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminMoviesMenu.Designer.vb">
+      <DependentUpon>AdminMoviesMenu.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AdminMoviesMenu.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminScreeningsMenu.Designer.vb">
+      <DependentUpon>AdminScreeningsMenu.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AdminScreeningsMenu.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminUserMenu.Designer.vb">
+      <DependentUpon>AdminUserMenu.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AdminUserMenu.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Form1.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -139,6 +163,18 @@
     <EmbeddedResource Include="Admin.resx">
       <DependentUpon>Admin.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AdminBookingsMenu.resx">
+      <DependentUpon>AdminBookingsMenu.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminMoviesMenu.resx">
+      <DependentUpon>AdminMoviesMenu.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminScreeningsMenu.resx">
+      <DependentUpon>AdminScreeningsMenu.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminUserMenu.resx">
+      <DependentUpon>AdminUserMenu.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.vb</DependentUpon>
     </EmbeddedResource>
@@ -162,10 +198,6 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Bookings.json" />
-    <None Include="Screenings.json" />
-    <None Include="Users.json" />
-    <None Include="movies.json" />
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>

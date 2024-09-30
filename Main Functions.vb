@@ -13,17 +13,19 @@ Module Main_Functions
             MsgBox($"An error occurred while saving to {filePath}: {ex.Message}")
         End Try
     End Sub
-    Function LoadFromJson(Of T)(filePath As String) As T 'load from json, of T is the type of object/ if class
+    Function LoadFromJson(Of T)(RelativePath As String) As T 'load from json, of T is the type of object/ if class
         Try
+            Dim executablePath As String = AppDomain.CurrentDomain.BaseDirectory
+            Dim filePath As String = Path.Combine(executablePath, RelativePath)
             Dim jsonData As String = File.ReadAllText(filePath)
             Dim data As T = JsonConvert.DeserializeObject(Of T)(jsonData)
             MsgBox($"Data successfully loaded from {filePath}")
             Return data
         Catch ex As FileNotFoundException
-            MsgBox($"The file {filePath} was not found.")
+            MsgBox($"The file {RelativePath} was not found.")
             Return Nothing
         Catch ex As Exception
-            MsgBox($"An error occurred while loading from {filePath}: {ex.Message}")
+            MsgBox($"An error occurred while loading from {RelativePath}: {ex.Message}")
             Return Nothing
         End Try
     End Function
