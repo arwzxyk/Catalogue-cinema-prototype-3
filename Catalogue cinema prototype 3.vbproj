@@ -107,6 +107,7 @@
     <Compile Include="AdminUserMenu.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Booking.vb" />
     <Compile Include="Form1.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -149,6 +150,7 @@
     <Compile Include="Registration.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Screening.vb" />
     <Compile Include="Seat.vb" />
     <Compile Include="SeatBooking.Designer.vb">
       <DependentUpon>SeatBooking.vb</DependentUpon>

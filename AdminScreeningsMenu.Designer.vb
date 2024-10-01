@@ -52,7 +52,7 @@ Partial Class AdminScreeningsMenu
         Me.dltScreeningBtn.Name = "dltScreeningBtn"
         Me.dltScreeningBtn.Size = New System.Drawing.Size(236, 103)
         Me.dltScreeningBtn.TabIndex = 14
-        Me.dltScreeningBtn.Text = "Delete Booking"
+        Me.dltScreeningBtn.Text = "Delete Screening"
         Me.dltScreeningBtn.UseVisualStyleBackColor = True
         '
         'dltScreeningTxt
@@ -141,9 +141,9 @@ Partial Class AdminScreeningsMenu
         Me.Label4.AutoSize = True
         Me.Label4.Location = New System.Drawing.Point(30, 483)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(57, 16)
+        Me.Label4.Size = New System.Drawing.Size(52, 16)
         Me.Label4.TabIndex = 21
-        Me.Label4.Text = "Filter by:"
+        Me.Label4.Text = "Sort by:"
         '
         'AdminScreeningsMenu
         '
