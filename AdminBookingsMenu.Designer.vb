@@ -27,9 +27,10 @@ Partial Class AdminBookingsMenu
         Me.Label2 = New System.Windows.Forms.Label()
         Me.fcsBookingBtn = New System.Windows.Forms.Button()
         Me.dltBookingBtn = New System.Windows.Forms.Button()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.controlBookingTxt = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.BookingsFltrTxt = New System.Windows.Forms.ComboBox()
+        Me.resetFocusBtn = New System.Windows.Forms.Button()
         CType(Me.BookingDgv, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -66,7 +67,7 @@ Partial Class AdminBookingsMenu
         '
         Me.fcsBookingBtn.Location = New System.Drawing.Point(571, 315)
         Me.fcsBookingBtn.Name = "fcsBookingBtn"
-        Me.fcsBookingBtn.Size = New System.Drawing.Size(236, 136)
+        Me.fcsBookingBtn.Size = New System.Drawing.Size(166, 136)
         Me.fcsBookingBtn.TabIndex = 9
         Me.fcsBookingBtn.Text = "Focus Booking"
         Me.fcsBookingBtn.UseVisualStyleBackColor = True
@@ -80,13 +81,13 @@ Partial Class AdminBookingsMenu
         Me.dltBookingBtn.Text = "Delete Booking"
         Me.dltBookingBtn.UseVisualStyleBackColor = True
         '
-        'TextBox1
+        'controlBookingTxt
         '
-        Me.TextBox1.Location = New System.Drawing.Point(571, 108)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(236, 22)
-        Me.TextBox1.TabIndex = 7
-        Me.TextBox1.Text = "Input Booking ID..."
+        Me.controlBookingTxt.Location = New System.Drawing.Point(571, 108)
+        Me.controlBookingTxt.Name = "controlBookingTxt"
+        Me.controlBookingTxt.Size = New System.Drawing.Size(236, 22)
+        Me.controlBookingTxt.TabIndex = 7
+        Me.controlBookingTxt.Text = "Input Booking ID..."
         '
         'Label3
         '
@@ -101,19 +102,30 @@ Partial Class AdminBookingsMenu
         'BookingsFltrTxt
         '
         Me.BookingsFltrTxt.FormattingEnabled = True
+        Me.BookingsFltrTxt.Items.AddRange(New Object() {"Booking ID", "User ID", "Screening ID", "Movie ID", "Price"})
         Me.BookingsFltrTxt.Location = New System.Drawing.Point(89, 474)
         Me.BookingsFltrTxt.Name = "BookingsFltrTxt"
         Me.BookingsFltrTxt.Size = New System.Drawing.Size(121, 24)
         Me.BookingsFltrTxt.TabIndex = 5
+        '
+        'resetFocusBtn
+        '
+        Me.resetFocusBtn.Location = New System.Drawing.Point(741, 315)
+        Me.resetFocusBtn.Name = "resetFocusBtn"
+        Me.resetFocusBtn.Size = New System.Drawing.Size(66, 136)
+        Me.resetFocusBtn.TabIndex = 10
+        Me.resetFocusBtn.Text = "Reset"
+        Me.resetFocusBtn.UseVisualStyleBackColor = True
         '
         'AdminBookingsMenu
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(826, 520)
+        Me.Controls.Add(Me.resetFocusBtn)
         Me.Controls.Add(Me.fcsBookingBtn)
         Me.Controls.Add(Me.dltBookingBtn)
-        Me.Controls.Add(Me.TextBox1)
+        Me.Controls.Add(Me.controlBookingTxt)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.BookingsFltrTxt)
         Me.Controls.Add(Me.Label2)
@@ -133,7 +145,8 @@ Partial Class AdminBookingsMenu
     Friend WithEvents Label2 As Label
     Friend WithEvents fcsBookingBtn As Button
     Friend WithEvents dltBookingBtn As Button
-    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents controlBookingTxt As TextBox
     Friend WithEvents Label3 As Label
     Friend WithEvents BookingsFltrTxt As ComboBox
+    Friend WithEvents resetFocusBtn As Button
 End Class

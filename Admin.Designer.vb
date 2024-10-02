@@ -22,75 +22,75 @@ Partial Class Admin
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Me.UserPanel = New System.Windows.Forms.Panel()
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.Button2 = New System.Windows.Forms.Button()
-        Me.Button3 = New System.Windows.Forms.Button()
-        Me.Button4 = New System.Windows.Forms.Button()
+        Me.AdminPanel = New System.Windows.Forms.Panel()
+        Me.usermenuBtn = New System.Windows.Forms.Button()
+        Me.moviesmenuBtn = New System.Windows.Forms.Button()
+        Me.screeningsmenuBtn = New System.Windows.Forms.Button()
+        Me.bookingsmenuBtn = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
-        'UserPanel
+        'AdminPanel
         '
-        Me.UserPanel.Location = New System.Drawing.Point(163, 1)
-        Me.UserPanel.Name = "UserPanel"
-        Me.UserPanel.Size = New System.Drawing.Size(816, 579)
-        Me.UserPanel.TabIndex = 0
+        Me.AdminPanel.Location = New System.Drawing.Point(163, 1)
+        Me.AdminPanel.Name = "AdminPanel"
+        Me.AdminPanel.Size = New System.Drawing.Size(816, 579)
+        Me.AdminPanel.TabIndex = 0
         '
-        'Button1
+        'usermenuBtn
         '
-        Me.Button1.Location = New System.Drawing.Point(12, 1)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(145, 139)
-        Me.Button1.TabIndex = 0
-        Me.Button1.Text = "Button1"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.usermenuBtn.Location = New System.Drawing.Point(12, 1)
+        Me.usermenuBtn.Name = "usermenuBtn"
+        Me.usermenuBtn.Size = New System.Drawing.Size(145, 139)
+        Me.usermenuBtn.TabIndex = 0
+        Me.usermenuBtn.Text = "User Menu"
+        Me.usermenuBtn.UseVisualStyleBackColor = True
         '
-        'Button2
+        'moviesmenuBtn
         '
-        Me.Button2.Location = New System.Drawing.Point(12, 147)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(145, 139)
-        Me.Button2.TabIndex = 1
-        Me.Button2.Text = "Button2"
-        Me.Button2.UseVisualStyleBackColor = True
+        Me.moviesmenuBtn.Location = New System.Drawing.Point(12, 147)
+        Me.moviesmenuBtn.Name = "moviesmenuBtn"
+        Me.moviesmenuBtn.Size = New System.Drawing.Size(145, 139)
+        Me.moviesmenuBtn.TabIndex = 1
+        Me.moviesmenuBtn.Text = "Movies Menu"
+        Me.moviesmenuBtn.UseVisualStyleBackColor = True
         '
-        'Button3
+        'screeningsmenuBtn
         '
-        Me.Button3.Location = New System.Drawing.Point(12, 293)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(145, 139)
-        Me.Button3.TabIndex = 2
-        Me.Button3.Text = "Button3"
-        Me.Button3.UseVisualStyleBackColor = True
+        Me.screeningsmenuBtn.Location = New System.Drawing.Point(12, 293)
+        Me.screeningsmenuBtn.Name = "screeningsmenuBtn"
+        Me.screeningsmenuBtn.Size = New System.Drawing.Size(145, 139)
+        Me.screeningsmenuBtn.TabIndex = 2
+        Me.screeningsmenuBtn.Text = "Screenings Menu"
+        Me.screeningsmenuBtn.UseVisualStyleBackColor = True
         '
-        'Button4
+        'bookingsmenuBtn
         '
-        Me.Button4.Location = New System.Drawing.Point(12, 439)
-        Me.Button4.Name = "Button4"
-        Me.Button4.Size = New System.Drawing.Size(145, 139)
-        Me.Button4.TabIndex = 3
-        Me.Button4.Text = "Button4"
-        Me.Button4.UseVisualStyleBackColor = True
+        Me.bookingsmenuBtn.Location = New System.Drawing.Point(12, 439)
+        Me.bookingsmenuBtn.Name = "bookingsmenuBtn"
+        Me.bookingsmenuBtn.Size = New System.Drawing.Size(145, 139)
+        Me.bookingsmenuBtn.TabIndex = 3
+        Me.bookingsmenuBtn.Text = "Bookings Menu"
+        Me.bookingsmenuBtn.UseVisualStyleBackColor = True
         '
         'Admin
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(979, 579)
-        Me.Controls.Add(Me.Button4)
-        Me.Controls.Add(Me.Button3)
-        Me.Controls.Add(Me.Button2)
-        Me.Controls.Add(Me.UserPanel)
-        Me.Controls.Add(Me.Button1)
+        Me.Controls.Add(Me.bookingsmenuBtn)
+        Me.Controls.Add(Me.screeningsmenuBtn)
+        Me.Controls.Add(Me.moviesmenuBtn)
+        Me.Controls.Add(Me.AdminPanel)
+        Me.Controls.Add(Me.usermenuBtn)
         Me.Name = "Admin"
         Me.Text = "Admin"
         Me.ResumeLayout(False)
 
     End Sub
 
-    Friend WithEvents UserPanel As Panel
-    Friend WithEvents Button1 As Button
-    Friend WithEvents Button2 As Button
-    Friend WithEvents Button3 As Button
-    Friend WithEvents Button4 As Button
+    Friend WithEvents AdminPanel As Panel
+    Friend WithEvents usermenuBtn As Button
+    Friend WithEvents moviesmenuBtn As Button
+    Friend WithEvents screeningsmenuBtn As Button
+    Friend WithEvents bookingsmenuBtn As Button
 End Class

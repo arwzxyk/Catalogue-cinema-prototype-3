@@ -45,66 +45,37 @@ Module Main_Functions
         Dim formInstance As New T()
         formInstance.Show()
     End Sub
-    Public Sub QuickSort(Of T)(ByRef list As List(Of T), ByVal indexLow As Integer, ByVal indexHigh As Integer, ByVal keySelector As Func(Of T, Integer))
+    Public Sub QuickSort(Of T)(ByRef list As List(Of T), ByVal indexLow As Integer, ByVal indexHigh As Integer, ByVal keySelector As Func(Of T, IComparable))
         ' this function will be used for data sorting for menu forms, the key selector is used to select what object attribute we would like to sort the data with
 
-        Dim swap_space As T
-        Dim Low As Integer = indexLow
-        Dim High As Integer = indexHigh
-        Dim pivot As Integer = keySelector(list(Int((indexLow + indexHigh) / 2)))
-
-        While Low <= High
-            While keySelector(list(Low)) < pivot And Low < indexHigh
-                Low += 1
-            End While
-
-            While keySelector(list(High)) > pivot And High > indexLow
-                High -= 1
-            End While
-
-            If Low <= High Then
-
-                swap_space = list(Low)
-                list(Low) = list(High)
-                list(High) = swap_space
-                Low += 1
-                High -= 1
-            End If
-        End While
-
-        ' list is split into two then quicksort is called again
-        If indexLow < High Then QuickSort(list, indexLow, High, keySelector)
-        If Low < indexHigh Then QuickSort(list, Low, indexHigh, keySelector)
-    End Sub
-
-
-    Sub QuickSortScreeningsByDateTime(ByRef screenings As Screening(), ByVal indexLow As Integer, ByVal indexHigh As Integer, ByVal keySelector As Func(Of T, Date))
+        Dim swapspace As T
         Dim i As Integer = indexLow
         Dim j As Integer = indexHigh
-        Dim pivot As DateTime = screenings((indexLow + indexHigh) \ 2).datetime
-
+        Dim pivot As IComparable = keySelector(list((indexLow + indexHigh) \ 2))
+        'IComparable is used in the case that the function needs to handle data types for a key other than integers e.g datetime
 
         While i <= j
 
-            While screenings(i).datetime < pivot
+            While keySelector(list(i)).CompareTo(pivot) < 0
                 i += 1
             End While
-
-
-            While screenings(j).datetime > pivot
+            While keySelector(list(j)).CompareTo(pivot) > 0
                 j -= 1
             End While
 
             If i <= j Then
-                Dim temp As DateTime = screenings(i).datetime
-                screenings(i).datetime = screenings(j).datetime
-                screenings(j).datetime = temp
+                swapspace = list(i)
+                list(i) = list(j)
+                list(j) = swapspace
                 i += 1
                 j -= 1
             End If
         End While
 
-        If indexLow < j Then QuickSortDateTime(screenings, indexLow, j)
-        If i < indexHigh Then QuickSortDateTime(screenings, i, indexHigh)
+        ' Recursive phase
+        If indexLow < j Then QuickSort(list, indexLow, j, keySelector)
+        If i < indexHigh Then QuickSort(list, i, indexHigh, keySelector)
     End Sub
 End Module
+
+

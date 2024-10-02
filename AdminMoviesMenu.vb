@@ -41,4 +41,8 @@ Actors: " & currentMovie.Actors
     Private Sub mvPlotTxt_TextChanged(sender As Object, e As EventArgs) Handles mvPlotTxt.TextChanged
 
     End Sub
+
+    Private Sub AdminMoviesMenu_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+    End Sub
 End Class

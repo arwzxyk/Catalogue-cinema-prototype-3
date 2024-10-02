@@ -25,9 +25,10 @@ Partial Class AdminUserMenu
         Me.UsersDgv = New System.Windows.Forms.DataGridView()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.searchUserTxt = New System.Windows.Forms.TextBox()
+        Me.controlUserTxt = New System.Windows.Forms.TextBox()
         Me.dltUserBtn = New System.Windows.Forms.Button()
         Me.fcsUserBtn = New System.Windows.Forms.Button()
+        Me.resetFocusBtn = New System.Windows.Forms.Button()
         CType(Me.UsersDgv, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -61,13 +62,13 @@ Partial Class AdminUserMenu
         Me.Label2.TabIndex = 2
         Me.Label2.Text = "User Control"
         '
-        'searchUserTxt
+        'controlUserTxt
         '
-        Me.searchUserTxt.Location = New System.Drawing.Point(524, 126)
-        Me.searchUserTxt.Name = "searchUserTxt"
-        Me.searchUserTxt.Size = New System.Drawing.Size(236, 22)
-        Me.searchUserTxt.TabIndex = 3
-        Me.searchUserTxt.Text = "Username/ID..."
+        Me.controlUserTxt.Location = New System.Drawing.Point(524, 126)
+        Me.controlUserTxt.Name = "controlUserTxt"
+        Me.controlUserTxt.Size = New System.Drawing.Size(236, 22)
+        Me.controlUserTxt.TabIndex = 3
+        Me.controlUserTxt.Text = "Username/ID..."
         '
         'dltUserBtn
         '
@@ -82,19 +83,29 @@ Partial Class AdminUserMenu
         '
         Me.fcsUserBtn.Location = New System.Drawing.Point(524, 333)
         Me.fcsUserBtn.Name = "fcsUserBtn"
-        Me.fcsUserBtn.Size = New System.Drawing.Size(236, 136)
+        Me.fcsUserBtn.Size = New System.Drawing.Size(164, 136)
         Me.fcsUserBtn.TabIndex = 5
         Me.fcsUserBtn.Text = "Focus User"
         Me.fcsUserBtn.UseVisualStyleBackColor = True
+        '
+        'resetFocusBtn
+        '
+        Me.resetFocusBtn.Location = New System.Drawing.Point(694, 333)
+        Me.resetFocusBtn.Name = "resetFocusBtn"
+        Me.resetFocusBtn.Size = New System.Drawing.Size(66, 136)
+        Me.resetFocusBtn.TabIndex = 6
+        Me.resetFocusBtn.Text = "Reset"
+        Me.resetFocusBtn.UseVisualStyleBackColor = True
         '
         'AdminUserMenu
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 518)
+        Me.Controls.Add(Me.resetFocusBtn)
         Me.Controls.Add(Me.fcsUserBtn)
         Me.Controls.Add(Me.dltUserBtn)
-        Me.Controls.Add(Me.searchUserTxt)
+        Me.Controls.Add(Me.controlUserTxt)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.UsersDgv)
@@ -110,7 +121,8 @@ Partial Class AdminUserMenu
     Friend WithEvents UsersDgv As DataGridView
     Friend WithEvents Label1 As Label
     Friend WithEvents Label2 As Label
-    Friend WithEvents searchUserTxt As TextBox
+    Friend WithEvents controlUserTxt As TextBox
     Friend WithEvents dltUserBtn As Button
     Friend WithEvents fcsUserBtn As Button
+    Friend WithEvents resetFocusBtn As Button
 End Class

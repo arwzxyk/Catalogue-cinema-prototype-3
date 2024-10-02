@@ -31,9 +31,9 @@ Partial Class AdminScreeningsMenu
         Me.scrnDateTime = New System.Windows.Forms.DateTimePicker()
         Me.screenNoClb = New System.Windows.Forms.CheckedListBox()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.crtScrnMovieTxt = New System.Windows.Forms.TextBox()
         Me.fltrScreeningsClb = New System.Windows.Forms.CheckedListBox()
         Me.Label4 = New System.Windows.Forms.Label()
+        Me.crtScrnMovieTxt = New System.Windows.Forms.ComboBox()
         CType(Me.ScreeningDgv, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -95,6 +95,7 @@ Partial Class AdminScreeningsMenu
         '
         'scrnDateTime
         '
+        Me.scrnDateTime.CustomFormat = "MM/dd/yy"
         Me.scrnDateTime.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
         Me.scrnDateTime.Location = New System.Drawing.Point(705, 148)
         Me.scrnDateTime.Name = "scrnDateTime"
@@ -119,14 +120,6 @@ Partial Class AdminScreeningsMenu
         Me.Label2.TabIndex = 19
         Me.Label2.Text = "Create Screening"
         '
-        'crtScrnMovieTxt
-        '
-        Me.crtScrnMovieTxt.Location = New System.Drawing.Point(562, 148)
-        Me.crtScrnMovieTxt.Name = "crtScrnMovieTxt"
-        Me.crtScrnMovieTxt.Size = New System.Drawing.Size(137, 22)
-        Me.crtScrnMovieTxt.TabIndex = 16
-        Me.crtScrnMovieTxt.Text = "Movie name..."
-        '
         'fltrScreeningsClb
         '
         Me.fltrScreeningsClb.FormattingEnabled = True
@@ -145,17 +138,25 @@ Partial Class AdminScreeningsMenu
         Me.Label4.TabIndex = 21
         Me.Label4.Text = "Sort by:"
         '
+        'crtScrnMovieTxt
+        '
+        Me.crtScrnMovieTxt.FormattingEnabled = True
+        Me.crtScrnMovieTxt.Location = New System.Drawing.Point(567, 147)
+        Me.crtScrnMovieTxt.Name = "crtScrnMovieTxt"
+        Me.crtScrnMovieTxt.Size = New System.Drawing.Size(121, 24)
+        Me.crtScrnMovieTxt.TabIndex = 22
+        '
         'AdminScreeningsMenu
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 586)
+        Me.Controls.Add(Me.crtScrnMovieTxt)
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.fltrScreeningsClb)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.screenNoClb)
         Me.Controls.Add(Me.scrnDateTime)
-        Me.Controls.Add(Me.crtScrnMovieTxt)
         Me.Controls.Add(Me.addScreeningBtn)
         Me.Controls.Add(Me.dltScreeningBtn)
         Me.Controls.Add(Me.dltScreeningTxt)
@@ -180,7 +181,7 @@ Partial Class AdminScreeningsMenu
     Friend WithEvents scrnDateTime As DateTimePicker
     Friend WithEvents screenNoClb As CheckedListBox
     Friend WithEvents Label2 As Label
-    Friend WithEvents crtScrnMovieTxt As TextBox
     Friend WithEvents fltrScreeningsClb As CheckedListBox
     Friend WithEvents Label4 As Label
+    Friend WithEvents crtScrnMovieTxt As ComboBox
 End Class
