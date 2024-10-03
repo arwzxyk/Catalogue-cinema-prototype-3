@@ -94,4 +94,9 @@ Public Class Registration
         Me.Select()
 
     End Sub
+
+    Private Sub backBtn_Click(sender As Object, e As EventArgs) Handles backBtn.Click
+        ShowForm(Of Form1)()
+        Me.Close()
+    End Sub
 End Class

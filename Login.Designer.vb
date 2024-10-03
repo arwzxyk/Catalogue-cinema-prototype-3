@@ -32,6 +32,7 @@ Partial Class Login
         Me.PictureBox3 = New System.Windows.Forms.PictureBox()
         Me.PasswordTxt = New System.Windows.Forms.TextBox()
         Me.SigninBtn = New System.Windows.Forms.Button()
+        Me.backBtn = New System.Windows.Forms.Button()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -126,11 +127,21 @@ Partial Class Login
         Me.SigninBtn.Text = "Sign in"
         Me.SigninBtn.UseVisualStyleBackColor = True
         '
+        'backBtn
+        '
+        Me.backBtn.Location = New System.Drawing.Point(3, 6)
+        Me.backBtn.Name = "backBtn"
+        Me.backBtn.Size = New System.Drawing.Size(75, 23)
+        Me.backBtn.TabIndex = 198
+        Me.backBtn.Text = "Back"
+        Me.backBtn.UseVisualStyleBackColor = True
+        '
         'Login
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(366, 546)
+        Me.Controls.Add(Me.backBtn)
         Me.Controls.Add(Me.SigninBtn)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.Panel2)
@@ -160,4 +171,5 @@ Partial Class Login
     Friend WithEvents PictureBox3 As PictureBox
     Friend WithEvents PasswordTxt As TextBox
     Friend WithEvents SigninBtn As Button
+    Friend WithEvents backBtn As Button
 End Class

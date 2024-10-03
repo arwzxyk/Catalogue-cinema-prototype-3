@@ -3,6 +3,7 @@
     Public Property movieID As Integer
     Public Property Screen As Integer
     Public Property datetime As Date
+    Public Property seats As List(Of Seat)
     Public Sub New(screeningId, movieId, Screen, datetime)
         screeningId = screeningId
         movieId = movieId

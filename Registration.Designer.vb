@@ -31,6 +31,7 @@ Partial Class Registration
         Me.LNameTxt = New System.Windows.Forms.TextBox()
         Me.EmailTxt = New System.Windows.Forms.TextBox()
         Me.FNameTxt = New System.Windows.Forms.TextBox()
+        Me.backBtn = New System.Windows.Forms.Button()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -68,7 +69,7 @@ Partial Class Registration
         'PictureBox1
         '
         Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
-        Me.PictureBox1.Location = New System.Drawing.Point(40, 14)
+        Me.PictureBox1.Location = New System.Drawing.Point(75, 25)
         Me.PictureBox1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(184, 102)
@@ -122,11 +123,21 @@ Partial Class Registration
         Me.FNameTxt.TabIndex = 13
         Me.FNameTxt.Text = "Enter Firstname"
         '
+        'backBtn
+        '
+        Me.backBtn.Location = New System.Drawing.Point(6, 6)
+        Me.backBtn.Name = "backBtn"
+        Me.backBtn.Size = New System.Drawing.Size(75, 23)
+        Me.backBtn.TabIndex = 198
+        Me.backBtn.Text = "Back"
+        Me.backBtn.UseVisualStyleBackColor = True
+        '
         'Registration
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(780, 417)
+        Me.Controls.Add(Me.backBtn)
         Me.Controls.Add(Me.FNameTxt)
         Me.Controls.Add(Me.EmailTxt)
         Me.Controls.Add(Me.LNameTxt)
@@ -152,4 +163,5 @@ Partial Class Registration
     Friend WithEvents LNameTxt As TextBox
     Friend WithEvents EmailTxt As TextBox
     Friend WithEvents FNameTxt As TextBox
+    Friend WithEvents backBtn As Button
 End Class

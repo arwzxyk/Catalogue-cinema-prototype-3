@@ -27,13 +27,13 @@ or press Register, to register with us today"
                 MovieLabel.Location = New Point(58, 111)
                 MovieLabel.Tag = panelIndex
                 'adding click event, using a tag to store the tab index to pass onto screening form
-                AddHandler MovieLabel.Click, AddressOf Movielabel_Click
+                AddHandler MovieLabel.Click, AddressOf Movie_Click
                 Dim MovieImage As New PictureBox
                 MovieImage.ImageLocation = movies(panelIndex - 1).Poster
                 MovieImage.SizeMode = PictureBoxSizeMode.StretchImage
                 MovieImage.Size = New Size(250, 100)
                 MovieImage.Tag = TabIndex
-                AddHandler MovieImage.Click, AddressOf Movieimage_Click
+                AddHandler MovieImage.Click, AddressOf Movie_Click
                 'adding label and image to the panel
                 panel.Controls.Add(MovieLabel)
                 panel.controls.add(MovieImage)
@@ -48,14 +48,10 @@ or press Register, to register with us today"
         End If
 
     End Sub
-    Private Sub Movielabel_Click(sender As Object, e As EventArgs)
+    Private Sub Movie_Click(sender As Object, e As EventArgs)
         selectMovieID = CInt(sender.Tag) - 1
 
 
-    End Sub
-    Private Sub Movieimage_Click(sender As Object, e As EventArgs)
-
-        selectMovieID = CInt(sender.tag) - 1
 
     End Sub
 
@@ -74,7 +70,7 @@ or press Register, to register with us today"
 
 
     Private Sub BookSeatBtn_Click(sender As Object, e As EventArgs) Handles BookSeatBtn.Click
-        Dim newSeatBooking As New SeatBooking
+        Dim newSeatBooking As New SeatBooking()
         newSeatBooking.Show()
         Me.Hide()
     End Sub
