@@ -1,17 +1,23 @@
 ﻿Imports System.Runtime.Remoting.Messaging
+Imports Microsoft.VisualBasic.ApplicationServices
 
 Public Class SeatBooking
     Dim availableIcon As New System.Drawing.Bitmap(My.Resources.available)
     Dim selectedIcon As New System.Drawing.Bitmap(My.Resources.selected)
     Dim unavailableIcon As New System.Drawing.Bitmap(My.Resources.unavailable)
     Dim sortedControls = SeatingPanel.Controls.Cast(Of Control)().OrderBy(Function(c) c.Left).ThenBy(Function(c) c.Top)
-    Dim TotalSum As Double = 0
+    Dim TotalSum As Double = 0 'price sum
+    Dim seats As New List(Of Seat)()
+    Dim seatings As List(Of Seating) = LoadFromJson(Of List(Of Seating))("Database\Seatings")
     Dim screenings As List(Of Screening) = LoadFromJson(Of List(Of Screening))("Database\Screenings")
+    Dim UscreeningID As Integer
     'this allow us to use selection on an icon, as it is now an object
-    Public Sub New(screeningID As Integer)
+    Public Sub New(screeningId As Integer)
 
         InitializeComponent()
-        Dim seats As List(Of Seat) = screenings(screeningID).seats
+        UscreeningID = screeningId
+        Dim seatingID As Integer = screenings(screeningId).seatingID
+        seats = seatings(seatingID).SeatingList 'find seatinglist
         For i = 0 To seats.Count - 1
             If TypeOf sortedControls(i) Is PictureBox Then 'searches for every picture box in form
                 Dim picturebox As PictureBox = CType(sortedControls(i), PictureBox)
@@ -24,23 +30,13 @@ Public Class SeatBooking
                     picturebox.Enabled = False
                     picturebox.Image = unavailableIcon
                 End If
+                picturebox.Tag = i ' I attach the seat id to the picturebox of the seat
             End If
         Next
     End Sub
-    Private Sub SeatBooking_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        SumLabel.Text = "Your total is £" & Math.Round(TotalSum, 2)
-        For Each control In sortedControls
-            If TypeOf control Is PictureBox Then 'searches for every picture box in form
-                Dim picturebox As PictureBox = CType(control, PictureBox)
-                picturebox.Enabled = True
-                picturebox.Image = availableIcon
-                AddHandler picturebox.Click, AddressOf PictureBox_Click
-            End If
-        Next
-    End Sub
+
 
     Private Sub PictureBox_Click(sender As Object, e As EventArgs)
-
         Dim pb As PictureBox = CType(sender, PictureBox)
         If Image.Equals(pb.Image, availableIcon) Then
             pb.Image = selectedIcon
@@ -53,12 +49,29 @@ Public Class SeatBooking
         End If
     End Sub
 
-    Private Sub PictureBox1_Click(sender As Object, e As EventArgs)
-        PictureBox1.Image = selectedIcon
-    End Sub
 
     Private Sub CheckoutBtn_Click(sender As Object, e As EventArgs) Handles CheckoutBtn.Click
-
+        Dim bookings As List(Of Booking) = LoadFromJson(Of List(Of Booking))("Database\Bookings")
+        Dim bookingID As Integer = bookings.Count
+        Dim movieID As Integer = screenings(UscreeningID).movieID
+        Dim bookedSeats As New List(Of Seat)()
+        For i = 0 To sortedControls.count - 1
+            If TypeOf sortedControls(i) Is PictureBox Then
+                Dim picturebox As PictureBox = CType(sortedControls(i), PictureBox)
+                If Image.Equals(picturebox, selectedIcon) Then
+                    seats(i).isAvailable = False
+                    bookedSeats.Add(seats(i))
+                End If
+            End If
+        Next
+        For i As Integer = 0 To bookings.Count - 1
+            If bookings(i) Is Nothing Then
+                bookingID = i
+            End If
+        Next
+        bookings.Add(New Booking(bookingID, SharedData.CurrentUser.UserID, UscreeningID, movieID, bookedSeats, TotalSum))
+        SaveToJson(bookings, "Database\Bookings")
+        MsgBox("Booking Created succesfully")
     End Sub
 
     Private Sub backBtn_Click(sender As Object, e As EventArgs) Handles backBtn.Click

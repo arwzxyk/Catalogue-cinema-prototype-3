@@ -43,17 +43,18 @@ or press Register, to register with us today"
         Next
 
         'Bookings page
-        If selectMovieID = -1 Then
+        If selectMovieID <> -1 Then
 
         End If
 
     End Sub
     Private Sub Movie_Click(sender As Object, e As EventArgs)
         selectMovieID = CInt(sender.Tag) - 1
-
-
+        TabPage3.Select()
 
     End Sub
+
+
 
     Private Sub LgnBtn_Click(sender As Object, e As EventArgs) Handles LgnBtn.Click
         Dim UserLogin As New Login
@@ -70,7 +71,7 @@ or press Register, to register with us today"
 
 
     Private Sub BookSeatBtn_Click(sender As Object, e As EventArgs) Handles BookSeatBtn.Click
-        Dim newSeatBooking As New SeatBooking()
+        'Dim newSeatBooking As New SeatBooking()
         newSeatBooking.Show()
         Me.Hide()
     End Sub

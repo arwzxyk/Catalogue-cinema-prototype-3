@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class SeatBooking
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class SeatBooking
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
@@ -128,7 +128,6 @@ Partial Class SeatBooking
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.backBtn = New System.Windows.Forms.Button()
-        Me.Button1 = New System.Windows.Forms.Button()
         Me.SeatingPanel.SuspendLayout()
         CType(Me.PictureBox65, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox66, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -1249,21 +1248,11 @@ Partial Class SeatBooking
         Me.backBtn.Text = "Back"
         Me.backBtn.UseVisualStyleBackColor = True
         '
-        'Button1
-        '
-        Me.Button1.Location = New System.Drawing.Point(545, 306)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(75, 23)
-        Me.Button1.TabIndex = 198
-        Me.Button1.Text = "Back"
-        Me.Button1.UseVisualStyleBackColor = True
-        '
         'SeatBooking
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1164, 635)
-        Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.backBtn)
         Me.Controls.Add(Me.SeatingPanel)
         Me.Controls.Add(Me.CheckoutBtn)
@@ -1483,5 +1472,4 @@ Partial Class SeatBooking
     Friend WithEvents PictureBox2 As PictureBox
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents backBtn As Button
-    Friend WithEvents Button1 As Button
 End Class

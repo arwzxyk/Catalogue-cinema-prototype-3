@@ -64,7 +64,7 @@ Public Class Registration
         If users Is Nothing Then
             users = New List(Of User)()
         End If
-        Dim indexID As Integer = users.Count 'automatically at the end of the list
+        Dim indexID As Integer = users.Count 'automatically at the end of the list + 1
         For i As Integer = 0 To users.Count - 1
             If users(i) Is Nothing Then
                 indexID = i
@@ -84,9 +84,7 @@ Public Class Registration
 
         SharedData.loggedIn = True
         MsgBox("Account Registered Succesfully")
-        Dim form As New Form1
-        form.Show()
-        form.Refresh()
+        ShowForm(Of Form1)()
         Me.Close()
     End Sub
 
