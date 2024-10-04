@@ -71,26 +71,14 @@ or press Register, to register with us today"
 
 
     Private Sub BookSeatBtn_Click(sender As Object, e As EventArgs) Handles BookSeatBtn.Click
-        'Dim newSeatBooking As New SeatBooking()
-        newSeatBooking.Show()
-        Me.Hide()
+        Dim newseatBooking As New SeatBooking(CInt(slctScreeningCB.Text))
+        bookSeatsPanel.Controls.Clear()
+        newseatBooking.FormBorderStyle = Windows.Forms.FormBorderStyle.None
+        newseatBooking.Dock = DockStyle.Fill
+        bookSeatsPanel.Controls.Add(newseatBooking)
+        newseatBooking.Show()
+
     End Sub
 
-    Private Sub ScreenTime1Lbl_Click(sender As Object, e As EventArgs) Handles ScreenTime1Lbl.Click
-        ScreenTime1Lbl.ForeColor = Color.Red
-        ScreenTime2Lbl.ForeColor = Color.Black
-        ScreenTime3Lbl.ForeColor = Color.Black
-    End Sub
 
-    Private Sub ScreenTime2Lbl_Click(sender As Object, e As EventArgs) Handles ScreenTime2Lbl.Click
-        ScreenTime1Lbl.ForeColor = Color.Black
-        ScreenTime2Lbl.ForeColor = Color.Red
-        ScreenTime3Lbl.ForeColor = Color.Black
-    End Sub
-
-    Private Sub ScreenTime3Lbl_Click(sender As Object, e As EventArgs) Handles ScreenTime3Lbl.Click
-        ScreenTime1Lbl.ForeColor = Color.Black
-        ScreenTime2Lbl.ForeColor = Color.Black
-        ScreenTime3Lbl.ForeColor = Color.Red
-    End Sub
 End Class

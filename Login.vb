@@ -40,11 +40,16 @@ Public Class Login
 
         If userID <> -1 Then
             If Sha256Hash(PasswordTxt.Text) = users(userID).Password Then
-                MsgBox("Login success")
-                Dim CinemaForm As New Form1
                 SharedData.loggedIn = True
                 SharedData.CurrentUser = users(userID)
-                CinemaForm.Show()
+                MsgBox("Login success")
+                ShowForm(Of Form1)()
+                If SharedData.CurrentUser.IsAdmin = True Then
+                    Dim AdminForm As New Admin
+                    AdminForm.Show()
+                End If
+                Me.Close()
+
 
             Else
                 MsgBox("incorrect password")

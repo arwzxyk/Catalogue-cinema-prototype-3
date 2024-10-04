@@ -33,6 +33,14 @@ Module Main_Functions
         Dim hash = New System.Security.Cryptography.SHA256Managed().ComputeHash(System.Text.Encoding.UTF8.GetBytes(Password))
         Return hash
     End Function
+    Public Function lengthCheck(Checkstring As String, toLength As Integer)
+        Dim valid As Boolean = False
+        If Checkstring.Length >= toLength Then
+            valid = True
+        End If
+        Return valid
+    End Function
+
 
     Sub ShowForm(Of T As {Form, New})() 'this is used to show previously hidden forms, useful to go back
         For Each form As Form In Application.OpenForms

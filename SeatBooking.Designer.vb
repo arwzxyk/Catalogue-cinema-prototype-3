@@ -127,7 +127,6 @@ Partial Class SeatBooking
         Me.PictureBox3 = New System.Windows.Forms.PictureBox()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.backBtn = New System.Windows.Forms.Button()
         Me.SeatingPanel.SuspendLayout()
         CType(Me.PictureBox65, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox66, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -1239,21 +1238,11 @@ Partial Class SeatBooking
         Me.PictureBox1.TabIndex = 174
         Me.PictureBox1.TabStop = False
         '
-        'backBtn
-        '
-        Me.backBtn.Location = New System.Drawing.Point(12, 12)
-        Me.backBtn.Name = "backBtn"
-        Me.backBtn.Size = New System.Drawing.Size(75, 23)
-        Me.backBtn.TabIndex = 197
-        Me.backBtn.Text = "Back"
-        Me.backBtn.UseVisualStyleBackColor = True
-        '
         'SeatBooking
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1164, 635)
-        Me.Controls.Add(Me.backBtn)
         Me.Controls.Add(Me.SeatingPanel)
         Me.Controls.Add(Me.CheckoutBtn)
         Me.Controls.Add(Me.SumLabel)
@@ -1471,5 +1460,4 @@ Partial Class SeatBooking
     Friend WithEvents PictureBox3 As PictureBox
     Friend WithEvents PictureBox2 As PictureBox
     Friend WithEvents PictureBox1 As PictureBox
-    Friend WithEvents backBtn As Button
 End Class

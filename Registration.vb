@@ -3,6 +3,7 @@ Imports System.Text
 
 Public Class Registration
 
+    Dim users As List(Of User) = LoadFromJson(Of List(Of User))("Database\users.json")
 
 
 
@@ -60,7 +61,7 @@ Public Class Registration
 
     'Instantiation
     Private Sub RegAccBtn_Click(sender As Object, e As EventArgs) Handles RegAccBtn.Click
-        Dim users As List(Of User) = LoadFromJson(Of List(Of User))("Database\users.json")
+        Dim validinput As Integer = -1
         If users Is Nothing Then
             users = New List(Of User)()
         End If
@@ -77,15 +78,20 @@ Public Class Registration
         Dim givenLname As String = LNameTxt.Text
         Dim givenEmail As String = EmailTxt.Text
         Dim hashedPass As String = Encoding.UTF8.GetString((Sha256Hash(PasswordTxt.Text)))
-        SharedData.CurrentUser = New User(indexID, givenUsername, hashedPass, givenFname, givenLname, givenEmail)
-        users.Add(SharedData.CurrentUser)
+        validinput += validateUsername(givenUsername)
+        If validinput <> -1 Then
+            SharedData.CurrentUser = New User(indexID, givenUsername, hashedPass, givenFname, givenLname, givenEmail)
+            users.Add(SharedData.CurrentUser)
 
-        SaveToJson(users, "Users.json")
+            SaveToJson(users, "Users.json")
 
-        SharedData.loggedIn = True
-        MsgBox("Account Registered Succesfully")
-        ShowForm(Of Form1)()
-        Me.Close()
+            SharedData.loggedIn = True
+            MsgBox("Account Registered Succesfully")
+            ShowForm(Of Form1)()
+            Me.Close()
+        Else
+            MsgBox("Invalid Input")
+        End If
     End Sub
 
     Private Sub Registration_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -97,4 +103,18 @@ Public Class Registration
         ShowForm(Of Form1)()
         Me.Close()
     End Sub
+    Public Function validateUsername(username As String)
+        Dim validusername As Integer = 1
+        If lengthCheck(validusername, 5) = True Then
+            For i = 0 To users.Count - 1
+                If users(i).username = username Then
+                    validusername = 0
+                End If
+            Next
+            MsgBox("Username is already taken")
+        ElseIf lengthCheck(username, 5) = False Then
+            MsgBox("Username is not over 5 characters")
+        End If
+        Return validusername
+    End Function
 End Class
