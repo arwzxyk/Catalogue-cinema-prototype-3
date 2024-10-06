@@ -5,6 +5,9 @@ Public Class Form1
     Dim selectMovieID As Integer = -1 'set to indicate no movie is selected
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        LoadForm()
+    End Sub
+    Public Sub LoadForm()
         If SharedData.loggedIn = True Then
             'Login/reg page
 
@@ -32,7 +35,7 @@ or press Register, to register with us today"
                 MovieImage.ImageLocation = movies(panelIndex - 1).Poster
                 MovieImage.SizeMode = PictureBoxSizeMode.StretchImage
                 MovieImage.Size = New Size(250, 100)
-                MovieImage.Tag = TabIndex
+                MovieImage.Tag = panelIndex
                 AddHandler MovieImage.Click, AddressOf Movie_Click
                 'adding label and image to the panel
                 panel.Controls.Add(MovieLabel)
@@ -50,7 +53,8 @@ or press Register, to register with us today"
     End Sub
     Private Sub Movie_Click(sender As Object, e As EventArgs)
         selectMovieID = CInt(sender.Tag) - 1
-        TabPage3.Select()
+        TabControl1.SelectedIndex = 2
+        MsgBox(movies(selectMovieID).Title & " Selected")
 
     End Sub
 

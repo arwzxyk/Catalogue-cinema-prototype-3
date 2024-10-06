@@ -85,9 +85,18 @@
         If movieId = -1 Then
             MsgBox("Movie not Found")
         End If
-        screenings.Add(New Screening(screenings.Count - 1, movieId, screen, screeningDatetime))
+        Dim seatings As List(Of Seating) = LoadFromJson(Of List(Of Seating))("Database\Seatings.json")
+        Dim seatingID As Integer
+        For i = 0 To seatings.Count
+            If seatings(i) Is Nothing Then
+                seatingID = i
+            End If
+        Next
+        seatings.Add(New Seating(seatingID))
+        screenings.Add(New Screening(screenings.Count - 1, movieId, screen, screeningDatetime, seatingID))
         fltrScreeningsClb.SetItemChecked(0, True) 'this is done to initiate a quicksort before save to json
         SaveToJson(screenings, "Database\Screenings")
+        SaveToJson(seatings, "Database\Seatings")
         MsgBox("Screening added")
 
     End Sub

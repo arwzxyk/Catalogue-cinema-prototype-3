@@ -60,16 +60,16 @@ Partial Class Form1
         Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.Label16 = New System.Windows.Forms.Label()
         Me.TabPage3 = New System.Windows.Forms.TabPage()
+        Me.bookSeatsPanel = New System.Windows.Forms.Panel()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.slctScreeningCB = New System.Windows.Forms.ComboBox()
+        Me.slctMovieCB = New System.Windows.Forms.ComboBox()
         Me.BookSeatBtn = New System.Windows.Forms.Button()
         Me.TabPage4 = New System.Windows.Forms.TabPage()
         Me.UserLabel = New System.Windows.Forms.Label()
         Me.RegBtn = New System.Windows.Forms.Button()
         Me.LgnBtn = New System.Windows.Forms.Button()
-        Me.slctMovieCB = New System.Windows.Forms.ComboBox()
-        Me.slctScreeningCB = New System.Windows.Forms.ComboBox()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.bookSeatsPanel = New System.Windows.Forms.Panel()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.Panel1.SuspendLayout()
@@ -470,6 +470,47 @@ Partial Class Form1
         Me.TabPage3.Text = "Create Booking"
         Me.TabPage3.UseVisualStyleBackColor = True
         '
+        'bookSeatsPanel
+        '
+        Me.bookSeatsPanel.Location = New System.Drawing.Point(256, 45)
+        Me.bookSeatsPanel.Name = "bookSeatsPanel"
+        Me.bookSeatsPanel.Size = New System.Drawing.Size(929, 499)
+        Me.bookSeatsPanel.TabIndex = 15
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(37, 253)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(110, 16)
+        Me.Label2.TabIndex = 14
+        Me.Label2.Text = "Select screening:"
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(37, 45)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(70, 16)
+        Me.Label1.TabIndex = 13
+        Me.Label1.Text = "Movie title:"
+        '
+        'slctScreeningCB
+        '
+        Me.slctScreeningCB.FormattingEnabled = True
+        Me.slctScreeningCB.Location = New System.Drawing.Point(40, 287)
+        Me.slctScreeningCB.Name = "slctScreeningCB"
+        Me.slctScreeningCB.Size = New System.Drawing.Size(179, 24)
+        Me.slctScreeningCB.TabIndex = 12
+        '
+        'slctMovieCB
+        '
+        Me.slctMovieCB.FormattingEnabled = True
+        Me.slctMovieCB.Location = New System.Drawing.Point(40, 84)
+        Me.slctMovieCB.Name = "slctMovieCB"
+        Me.slctMovieCB.Size = New System.Drawing.Size(179, 24)
+        Me.slctMovieCB.TabIndex = 11
+        '
         'BookSeatBtn
         '
         Me.BookSeatBtn.Location = New System.Drawing.Point(40, 367)
@@ -520,47 +561,6 @@ Partial Class Form1
         Me.LgnBtn.TabIndex = 0
         Me.LgnBtn.Text = "Login"
         Me.LgnBtn.UseVisualStyleBackColor = True
-        '
-        'slctMovieCB
-        '
-        Me.slctMovieCB.FormattingEnabled = True
-        Me.slctMovieCB.Location = New System.Drawing.Point(40, 84)
-        Me.slctMovieCB.Name = "slctMovieCB"
-        Me.slctMovieCB.Size = New System.Drawing.Size(179, 24)
-        Me.slctMovieCB.TabIndex = 11
-        '
-        'slctScreeningCB
-        '
-        Me.slctScreeningCB.FormattingEnabled = True
-        Me.slctScreeningCB.Location = New System.Drawing.Point(40, 287)
-        Me.slctScreeningCB.Name = "slctScreeningCB"
-        Me.slctScreeningCB.Size = New System.Drawing.Size(179, 24)
-        Me.slctScreeningCB.TabIndex = 12
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(37, 45)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(70, 16)
-        Me.Label1.TabIndex = 13
-        Me.Label1.Text = "Movie title:"
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(37, 253)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(110, 16)
-        Me.Label2.TabIndex = 14
-        Me.Label2.Text = "Select screening:"
-        '
-        'bookSeatsPanel
-        '
-        Me.bookSeatsPanel.Location = New System.Drawing.Point(256, 45)
-        Me.bookSeatsPanel.Name = "bookSeatsPanel"
-        Me.bookSeatsPanel.Size = New System.Drawing.Size(929, 499)
-        Me.bookSeatsPanel.TabIndex = 15
         '
         'Form1
         '

@@ -4,11 +4,12 @@
     Public Property Screen As Integer
     Public Property datetime As Date
     Public Property seatingID As Integer
-    Public Sub New(screeningId, movieId, Screen, datetime)
+    Public Sub New(screeningId As Integer, movieId As Integer, Screen As Integer, datetime As DateTime, seatingID As Integer)
         screeningId = screeningId
         movieId = movieId
         Screen = Screen
         datetime = datetime
+        seatingID = seatingID
     End Sub
     Function getDate()
         Return datetime.Date

@@ -13,9 +13,10 @@ Public Class Seating
     Public Property SeatingID As Integer
     Public Property SeatingList As List(Of Seat)
 
-    Public Sub New()
+    Public Sub New(seatingID As Integer)
         SeatingList = New List(Of Seat)() 'create empty list to add empty seats
         CreateSeating()
+        seatingID = seatingID
     End Sub
     Private Sub CreateSeating()
         Dim rows As Char() = {"A", "B", "C", "D", "E"}
