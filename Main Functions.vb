@@ -41,18 +41,6 @@ Module Main_Functions
         Return valid
     End Function
 
-
-    Sub ShowForm(Of T As {Form, New})() 'this is used to show previously hidden forms, useful to go back
-        For Each form As Form In Application.OpenForms
-            If TypeOf form Is T Then
-                form.BringToFront()
-                Return
-            End If
-        Next
-
-        Dim formInstance As New T()
-        formInstance.Show()
-    End Sub
     Public Sub QuickSort(Of T)(ByRef list As List(Of T), ByVal indexLow As Integer, ByVal indexHigh As Integer, ByVal keySelector As Func(Of T, IComparable))
         ' this function will be used for data sorting for menu forms, the key selector is used to select what object attribute we would like to sort the data with
 

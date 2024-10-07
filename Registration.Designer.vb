@@ -41,7 +41,7 @@ Partial Class Registration
         Me.RegAccBtn.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.RegAccBtn.Name = "RegAccBtn"
         Me.RegAccBtn.Size = New System.Drawing.Size(256, 66)
-        Me.RegAccBtn.TabIndex = 10
+        Me.RegAccBtn.TabIndex = 5
         Me.RegAccBtn.Text = "Create Account"
         Me.RegAccBtn.UseVisualStyleBackColor = True
         '
@@ -63,7 +63,7 @@ Partial Class Registration
         Me.PasswordTxt.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.PasswordTxt.Name = "PasswordTxt"
         Me.PasswordTxt.Size = New System.Drawing.Size(182, 28)
-        Me.PasswordTxt.TabIndex = 0
+        Me.PasswordTxt.TabIndex = 1
         Me.PasswordTxt.Text = "Create Password"
         '
         'PictureBox1
@@ -97,7 +97,7 @@ Partial Class Registration
         Me.LNameTxt.Multiline = True
         Me.LNameTxt.Name = "LNameTxt"
         Me.LNameTxt.Size = New System.Drawing.Size(255, 24)
-        Me.LNameTxt.TabIndex = 11
+        Me.LNameTxt.TabIndex = 3
         Me.LNameTxt.Text = "Enter Lastname"
         '
         'EmailTxt
@@ -108,7 +108,7 @@ Partial Class Registration
         Me.EmailTxt.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.EmailTxt.Name = "EmailTxt"
         Me.EmailTxt.Size = New System.Drawing.Size(255, 28)
-        Me.EmailTxt.TabIndex = 12
+        Me.EmailTxt.TabIndex = 4
         Me.EmailTxt.Text = "Enter Email"
         '
         'FNameTxt
@@ -120,7 +120,7 @@ Partial Class Registration
         Me.FNameTxt.Multiline = True
         Me.FNameTxt.Name = "FNameTxt"
         Me.FNameTxt.Size = New System.Drawing.Size(255, 24)
-        Me.FNameTxt.TabIndex = 13
+        Me.FNameTxt.TabIndex = 2
         Me.FNameTxt.Text = "Enter Firstname"
         '
         'backBtn
@@ -128,7 +128,7 @@ Partial Class Registration
         Me.backBtn.Location = New System.Drawing.Point(6, 6)
         Me.backBtn.Name = "backBtn"
         Me.backBtn.Size = New System.Drawing.Size(75, 23)
-        Me.backBtn.TabIndex = 198
+        Me.backBtn.TabIndex = 6
         Me.backBtn.Text = "Back"
         Me.backBtn.UseVisualStyleBackColor = True
         '

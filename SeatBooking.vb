@@ -8,8 +8,8 @@ Public Class SeatBooking
     Dim sortedControls = SeatingPanel.Controls.Cast(Of Control)().OrderBy(Function(c) c.Left).ThenBy(Function(c) c.Top)
     Dim TotalSum As Double = 0 'price sum
     Dim seats As New List(Of Seat)()
-    Dim seatings As List(Of Seating) = LoadFromJson(Of List(Of Seating))("Database\Seatings")
-    Dim screenings As List(Of Screening) = LoadFromJson(Of List(Of Screening))("Database\Screenings")
+    Dim seatings As List(Of Seating) = LoadFromJson(Of List(Of Seating))("Database\Seatings.json")
+    Dim screenings As List(Of Screening) = LoadFromJson(Of List(Of Screening))("Database\Screenings.json")
     Dim UscreeningID As Integer
     'this allow us to use selection on an icon, as it is now an object
     Public Sub New(screeningId As Integer)
@@ -51,9 +51,10 @@ Public Class SeatBooking
 
 
     Private Sub CheckoutBtn_Click(sender As Object, e As EventArgs) Handles CheckoutBtn.Click
-        Dim bookings As List(Of Booking) = LoadFromJson(Of List(Of Booking))("Database\Bookings")
+        Dim bookings As List(Of Booking) = LoadFromJson(Of List(Of Booking))("Database\Bookings.json")
         Dim bookingID As Integer = bookings.Count
         Dim movieID As Integer = screenings(UscreeningID).movieID
+        Dim Currentseating As Seating = seatings(screenings(UscreeningID).seatingID) 'current seating arrangement
         Dim bookedSeats As New List(Of Seat)()
         For i = 0 To sortedControls.count - 1
             If TypeOf sortedControls(i) Is PictureBox Then
@@ -69,9 +70,19 @@ Public Class SeatBooking
                 bookingID = i
             End If
         Next
+
+        For Each seat As Seat In bookedSeats
+            Currentseating.SeatingList(seat.SeatID).isAvailable = False
+            'we change the booked seats to unavailable in order to be saved back into the seating list
+        Next
+        seatings(screenings(UscreeningID).seatingID) = Currentseating 'save to the seating list
         bookings.Add(New Booking(bookingID, SharedData.CurrentUser.UserID, UscreeningID, movieID, bookedSeats, TotalSum))
-        SaveToJson(bookings, "Database\Bookings")
+
+        'save back to json
+        SaveToJson(bookings, "Database\Bookings.json")
+        SaveToJson(seatings, "Database\Seatings.json")
         MsgBox("Booking Created succesfully")
+        Me.Close()
     End Sub
 
 End Class

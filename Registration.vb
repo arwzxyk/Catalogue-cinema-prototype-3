@@ -87,7 +87,14 @@ Public Class Registration
 
             SharedData.loggedIn = True
             MsgBox("Account Registered Succesfully")
-            ShowForm(Of Form1)()
+            Form1.Show()
+            If SharedData.CurrentUser.IsAdmin = True Then
+                'load admin menu
+                Dim Adminform As New Admin
+                Adminform.BringToFront()
+                Adminform.Show()
+            End If
+
             Me.Close()
         Else
             MsgBox("Invalid Input")
@@ -95,12 +102,11 @@ Public Class Registration
     End Sub
 
     Private Sub Registration_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Me.Select()
-
+        Me.Focus()
     End Sub
 
     Private Sub backBtn_Click(sender As Object, e As EventArgs) Handles backBtn.Click
-        ShowForm(Of Form1)()
+        Form1.Show()
         Me.Close()
     End Sub
     Public Function validateUsername(username As String)

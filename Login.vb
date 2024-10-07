@@ -30,12 +30,9 @@ Public Class Login
     Private Sub SigninBtn_Click(sender As Object, e As EventArgs) Handles SigninBtn.Click
         Dim users As List(Of User) = LoadFromJson(Of List(Of User))("Database\users.json")
         Dim userID As Integer = 0
-        If users Is Nothing Then
-            users = New List(Of User)()
 
-        Else
-            userID = BinarySearch(users, UsernameTxt.Text)
-        End If
+        userID = BinarySearch(users, UsernameTxt.Text)
+
 
 
         If userID <> -1 Then
@@ -43,7 +40,8 @@ Public Class Login
                 SharedData.loggedIn = True
                 SharedData.CurrentUser = users(userID)
                 MsgBox("Login success")
-                ShowForm(Of Form1)()
+                Form1.Show()
+
                 If SharedData.CurrentUser.IsAdmin = True Then
                     Dim AdminForm As New Admin
                     AdminForm.Show()
@@ -80,12 +78,12 @@ Public Class Login
     End Function
 
     Private Sub Login_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Me.Select()
+        Me.Focus()
 
     End Sub
 
     Private Sub backBtn_Click(sender As Object, e As EventArgs) Handles backBtn.Click
-        ShowForm(Of Form1)()
+        Form1.Show()
         Me.Close()
     End Sub
 End Class

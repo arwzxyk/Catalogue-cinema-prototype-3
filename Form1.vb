@@ -46,15 +46,35 @@ or press Register, to register with us today"
         Next
 
         'Bookings page
-        If selectMovieID <> -1 Then
+        For Each movie In movies
+            slctMovieCB.Items.Add(movie.Title)
 
-        End If
+        Next
+        slctMovieCB.Text = "Select a movie"
+        slctScreeningCB.Enabled = False
+            slctScreeningCB.Text = "Please select a movie first"
 
+
+    End Sub
+    Private Sub Movie_selected()
+        Dim screenings As List(Of Screening) = LoadFromJson(Of List(Of Screening))("Database\Screenings.json")
+        While selectMovieID <> -1
+            slctMovieCB.Text = movies(selectMovieID).Title
+            slctScreeningCB.Enabled = True
+            slctScreeningCB.Text = "Select a screening"
+            For i = 0 To screenings.Count - 1
+                If screenings(i).movieID = selectMovieID Then
+                    slctScreeningCB.Items.Add(screenings(i).datetime)
+                End If
+            Next
+
+        End While
     End Sub
     Private Sub Movie_Click(sender As Object, e As EventArgs)
         selectMovieID = CInt(sender.Tag) - 1
         TabControl1.SelectedIndex = 2
         MsgBox(movies(selectMovieID).Title & " Selected")
+        Movie_selected()
 
     End Sub
 
@@ -81,8 +101,6 @@ or press Register, to register with us today"
         newseatBooking.Dock = DockStyle.Fill
         bookSeatsPanel.Controls.Add(newseatBooking)
         newseatBooking.Show()
-
     End Sub
-
 
 End Class
