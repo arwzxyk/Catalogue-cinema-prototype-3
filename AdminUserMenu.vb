@@ -1,7 +1,7 @@
 ﻿Imports System.Reflection
 
 Public Class AdminUserMenu
-    Dim users As List(Of User) = LoadFromJson(Of List(Of User))("Database\Users")
+    Dim users As List(Of User) = LoadFromJson(Of List(Of User))("Database\Users.json")
     Sub display_users()
         UsersDgv.DataSource = users
         UsersDgv.Columns("password").Visible = False
@@ -11,7 +11,7 @@ Public Class AdminUserMenu
         Dim index As Integer = CInt(controlUserTxt.Text)
         If index >= 0 And index <= users.Count Then
             users.Remove(users(index))
-            SaveToJson(users, "Database\Users")
+            SaveToJson(users, "Database\Users.json")
             MsgBox("User removed")
         Else
             MsgBox("User does not exist")

@@ -83,7 +83,7 @@ Public Class Registration
             SharedData.CurrentUser = New User(indexID, givenUsername, hashedPass, givenFname, givenLname, givenEmail)
             users.Add(SharedData.CurrentUser)
 
-            SaveToJson(users, "Users.json")
+            SaveToJson(users, "Database\Users.json")
 
             SharedData.loggedIn = True
             MsgBox("Account Registered Succesfully")

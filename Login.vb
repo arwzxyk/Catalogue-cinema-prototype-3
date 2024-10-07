@@ -1,5 +1,7 @@
 ﻿
 
+Imports System.Text
+
 Public Class Login
     'text changer
 
@@ -36,7 +38,7 @@ Public Class Login
 
 
         If userID <> -1 Then
-            If Sha256Hash(PasswordTxt.Text) = users(userID).Password Then
+            If Encoding.UTF8.GetString(Sha256Hash(PasswordTxt.Text)) = users(userID).Password Then
                 SharedData.loggedIn = True
                 SharedData.CurrentUser = users(userID)
                 MsgBox("Login success")

@@ -1,5 +1,5 @@
 ﻿Public Class AdminBookingsMenu
-    Dim bookings As List(Of Booking) = LoadFromJson(Of List(Of Booking))("Database\Bookings")
+    Dim bookings As List(Of Booking) = LoadFromJson(Of List(Of Booking))("Database\Bookings.json")
     Sub display_bookings()
         BookingDgv.DataSource = bookings
 
@@ -9,7 +9,7 @@
         Dim index As Integer = CInt(controlBookingTxt.Text)
         If index >= 0 And index <= bookings.Count Then
             bookings.Remove(bookings(index))
-            SaveToJson(bookings, "Database\Bookings")
+            SaveToJson(bookings, "Database\Bookings.json")
             MsgBox("Booking removed")
         Else
             MsgBox("Booking does not exist")

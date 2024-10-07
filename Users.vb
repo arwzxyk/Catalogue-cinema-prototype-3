@@ -13,7 +13,7 @@ Public Class User
 
 
 
-    Public Sub New(GivenUserID, HashedPassword, GivenUsername, GivenFname, GivenLname, GivenEmail)
+    Public Sub New(GivenUserID, GivenUsername, HashedPassword, GivenFname, GivenLname, GivenEmail)
         UserID = GivenUserID
         Password = HashedPassword 'password is hashed before it is stored in the database
         username = GivenUsername

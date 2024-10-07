@@ -43,6 +43,6 @@ Actors: " & currentMovie.Actors
     End Sub
 
     Private Sub AdminMoviesMenu_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
+        DisplayCurrentMovie()
     End Sub
 End Class
