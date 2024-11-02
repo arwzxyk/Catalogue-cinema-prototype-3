@@ -66,7 +66,7 @@
         Dim movieId As Integer = -1
 
         For i = 0 To movies.Count - 1
-            If String.Compare(movies(i).Title, crtScrnMovieTxt.Text, True) = 0 Then
+            If movies(i).Title = crtScrnMovieTxt.Text Then
                 movieId = i
             End If
         Next
@@ -94,7 +94,7 @@
                     Case 1
                         screen = 2
                         screeningDatetime = New DateTime(screeningDatetime.Year, screeningDatetime.Month, screeningDatetime.Day, 14, 40, 0)
-                    'screening datetime is already intialised, we are essentially taking the date and adding the time we want on the end
+                    'screening datetime is already intialised, we are essentially taking the date and adding the time we want on the end 
                     Case 2
                         screen = 1
                         screeningDatetime = New DateTime(screeningDatetime.Year, screeningDatetime.Month, screeningDatetime.Day, 14, 30, 0)

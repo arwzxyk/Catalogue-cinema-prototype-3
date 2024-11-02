@@ -95,7 +95,7 @@ Partial Class AdminScreeningsMenu
         '
         'scrnDateTime
         '
-        Me.scrnDateTime.CustomFormat = "MM/dd/yy"
+        Me.scrnDateTime.CustomFormat = "dd/mm/yy"
         Me.scrnDateTime.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
         Me.scrnDateTime.Location = New System.Drawing.Point(705, 148)
         Me.scrnDateTime.Name = "scrnDateTime"

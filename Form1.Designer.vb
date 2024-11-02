@@ -57,7 +57,6 @@ Partial Class Form1
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Panel5 = New System.Windows.Forms.Panel()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.Label16 = New System.Windows.Forms.Label()
         Me.TabPage3 = New System.Windows.Forms.TabPage()
         Me.bookSeatsPanel = New System.Windows.Forms.Panel()
@@ -70,6 +69,9 @@ Partial Class Form1
         Me.UserLabel = New System.Windows.Forms.Label()
         Me.RegBtn = New System.Windows.Forms.Button()
         Me.LgnBtn = New System.Windows.Forms.Button()
+        Me.ScreeningsFLPanel = New System.Windows.Forms.FlowLayoutPanel()
+        Me.mvscreenTxt = New System.Windows.Forms.ComboBox()
+        Me.scrnsearchBtn = New System.Windows.Forms.Button()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.Panel1.SuspendLayout()
@@ -427,7 +429,9 @@ Partial Class Form1
         '
         'TabPage2
         '
-        Me.TabPage2.Controls.Add(Me.TextBox1)
+        Me.TabPage2.Controls.Add(Me.scrnsearchBtn)
+        Me.TabPage2.Controls.Add(Me.mvscreenTxt)
+        Me.TabPage2.Controls.Add(Me.ScreeningsFLPanel)
         Me.TabPage2.Controls.Add(Me.Label16)
         Me.TabPage2.Location = New System.Drawing.Point(4, 25)
         Me.TabPage2.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
@@ -437,13 +441,6 @@ Partial Class Form1
         Me.TabPage2.TabIndex = 1
         Me.TabPage2.Text = "Screenings"
         Me.TabPage2.UseVisualStyleBackColor = True
-        '
-        'TextBox1
-        '
-        Me.TextBox1.Location = New System.Drawing.Point(33, 79)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(183, 22)
-        Me.TextBox1.TabIndex = 1
         '
         'Label16
         '
@@ -562,6 +559,30 @@ Partial Class Form1
         Me.LgnBtn.Text = "Login"
         Me.LgnBtn.UseVisualStyleBackColor = True
         '
+        'ScreeningsFLPanel
+        '
+        Me.ScreeningsFLPanel.Location = New System.Drawing.Point(33, 157)
+        Me.ScreeningsFLPanel.Name = "ScreeningsFLPanel"
+        Me.ScreeningsFLPanel.Size = New System.Drawing.Size(1178, 405)
+        Me.ScreeningsFLPanel.TabIndex = 2
+        '
+        'mvscreenTxt
+        '
+        Me.mvscreenTxt.FormattingEnabled = True
+        Me.mvscreenTxt.Location = New System.Drawing.Point(33, 78)
+        Me.mvscreenTxt.Name = "mvscreenTxt"
+        Me.mvscreenTxt.Size = New System.Drawing.Size(121, 24)
+        Me.mvscreenTxt.TabIndex = 3
+        '
+        'scrnsearchBtn
+        '
+        Me.scrnsearchBtn.Location = New System.Drawing.Point(262, 58)
+        Me.scrnsearchBtn.Name = "scrnsearchBtn"
+        Me.scrnsearchBtn.Size = New System.Drawing.Size(124, 63)
+        Me.scrnsearchBtn.TabIndex = 4
+        Me.scrnsearchBtn.Text = "Search Screenings"
+        Me.scrnsearchBtn.UseVisualStyleBackColor = True
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -649,7 +670,6 @@ Partial Class Form1
     Friend WithEvents PictureBox8 As PictureBox
     Friend WithEvents Panel2 As Panel
     Friend WithEvents Panel5 As Panel
-    Friend WithEvents TextBox1 As TextBox
     Friend WithEvents Label16 As Label
     Friend WithEvents BookSeatBtn As Button
     Friend WithEvents Label2 As Label
@@ -657,4 +677,7 @@ Partial Class Form1
     Friend WithEvents slctScreeningCB As ComboBox
     Friend WithEvents slctMovieCB As ComboBox
     Friend WithEvents bookSeatsPanel As Panel
+    Friend WithEvents ScreeningsFLPanel As FlowLayoutPanel
+    Friend WithEvents scrnsearchBtn As Button
+    Friend WithEvents mvscreenTxt As ComboBox
 End Class
