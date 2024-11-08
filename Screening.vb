@@ -4,12 +4,12 @@
     Public Property Screen As Integer
     Public Property datetime As Date
     Public Property seatingID As Integer
-    Public Sub New(screeningId As Integer, movieId As Integer, Screen As Integer, datetime As DateTime, seatingID As Integer)
-        screeningId = screeningId
-        movieId = movieId
-        Screen = Screen
-        datetime = datetime
-        seatingID = seatingID
+    Public Sub New(nscreeningId As Integer, nmovieId As Integer, nScreen As Integer, ndatetime As DateTime, nseatingID As Integer)
+        screeningID = nscreeningId
+        movieID = nmovieId
+        Screen = nScreen
+        datetime = ndatetime
+        seatingID = nseatingID
     End Sub
     Function getDate()
         Return datetime.Date

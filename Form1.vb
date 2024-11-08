@@ -81,7 +81,7 @@ or press Register, to register with us today"
 
     End Sub
     Private Sub scrnsearchBtn_Click(sender As Object, e As EventArgs) Handles scrnsearchBtn.Click
-        Dim screenings As List(Of Screening) = LoadFromJson(Of List(Of Screening))("Database\Screenings")
+        Dim screenings As List(Of Screening) = LoadFromJson(Of List(Of Screening))("Database\Screenings.json")
         Dim selectmovieScreenings As New List(Of Screening)
         For i = 0 To movies.Count - 1
             If movies(i).Title = mvscreenTxt.Text Then
@@ -108,6 +108,8 @@ Screen No: " & selectmovieScreenings(i).Screen
                 screeningBtn.Size = New Size(80, 30)
                 screeningBtn.TextAlign = ContentAlignment.MiddleCenter
 
+                ' adding buttons for each screening to panel, event handler handles click
+
                 AddHandler screeningBtn.Click, AddressOf scrnBtn_click
                 ScreeningsFLPanel.Controls.Add(screeningBtn)
             Next
@@ -116,9 +118,10 @@ Screen No: " & selectmovieScreenings(i).Screen
     End Sub
 
     Private Sub scrnBtn_click(sender As Object, e As EventArgs)
-        Dim screenings As List(Of Screening) = LoadFromJson(Of List(Of Screening))("Database\Screenings")
+        Dim screenings As List(Of Screening) = LoadFromJson(Of List(Of Screening))("Database\Screenings.json")
         Dim selectscreening As Screening = screenings(CInt(sender.tag))
         'passes all attributes of selected screening
+
     End Sub
 
 
@@ -138,7 +141,17 @@ Screen No: " & selectmovieScreenings(i).Screen
 
 
     Private Sub BookSeatBtn_Click(sender As Object, e As EventArgs) Handles BookSeatBtn.Click
-        Dim newseatBooking As New SeatBooking(CInt(slctScreeningCB.Text))
+        Dim screenings As List(Of Screening) = LoadFromJson(Of List(Of Screening))("Database\Screenings.json")
+        Dim count As Integer = 0
+        Dim screeningIDFound As Integer = -1
+        While screeningIDFound = -1 And count < screenings.Count
+            If screenings(count).datetime = DateTime.Parse(slctScreeningCB.Text) And screenings(count).movieID = selectMovieID Then
+                screeningIDFound = count
+            Else
+                count = count + 1
+            End If
+        End While
+        Dim newseatBooking As New SeatBooking(count)
         bookSeatsPanel.Controls.Clear()
         newseatBooking.FormBorderStyle = Windows.Forms.FormBorderStyle.None
         newseatBooking.Dock = DockStyle.Fill

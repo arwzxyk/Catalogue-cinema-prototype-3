@@ -2,7 +2,7 @@
     Dim screenings As List(Of Screening) = LoadFromJson(Of List(Of Screening))("Database\Screenings.json")
     Dim movies As List(Of movie) = LoadFromJson(Of List(Of movie))("Database\movies.json")
     Dim screen As Integer
-    Dim screeningDatetime As DateTime = DateTime.Now
+    Dim screeningDatetime As DateTime
     Sub display_screenings()
         ScreeningDgv.DataSource = screenings
     End Sub
@@ -45,19 +45,6 @@
 
         AddHandler fltrScreeningsClb.ItemCheck, AddressOf fltrScreeningsClb_ItemCheck
     End Sub
-    Private Sub screenNoClb_ItemCheck(sender As Object, e As ItemCheckEventArgs) Handles screenNoClb.ItemCheck
-        ' here we temporarily remove the event handler to prevent any unwanted recursion
-        RemoveHandler screenNoClb.ItemCheck, AddressOf fltrScreeningsClb_ItemCheck
-        If e.NewValue = CheckState.Checked Then
-                For i As Integer = 0 To screenNoClb.Items.Count - 1
-                    If i <> e.Index Then
-                        screenNoClb.SetItemChecked(i, False)
-                    End If
-                Next
-            'unchecks every other box as we should only be able to sort by one 
-
-        End If
-    End Sub
 
 
     Private Sub addScreeningBtn_Click(sender As Object, e As EventArgs) Handles addScreeningBtn.Click
@@ -77,15 +64,15 @@
         If seatings Is Nothing Then
             seatings = New List(Of Seating)()
         End If
-        Dim seatingID As Integer = seatings.Count
-        For i = 0 To seatings.Count - 1
-            If seatings(i) Is Nothing Then
-                seatingID = i
-            End If
-        Next
+        If screenings Is Nothing Then
+            screenings = New List(Of Screening)()
+        End If
+
+
         screeningDatetime = scrnDateTime.Value
         For i = 0 To screenNoClb.Items.Count - 1
-            If screenNoClb.Items.IndexOf(i) = CheckState.Checked Then
+            If screenNoClb.GetItemCheckState(i) = CheckState.Checked Then
+                MsgBox(i & " Is checked")
                 Select Case i
                     Case 0
 
@@ -96,13 +83,29 @@
                         screeningDatetime = New DateTime(screeningDatetime.Year, screeningDatetime.Month, screeningDatetime.Day, 14, 40, 0)
                     'screening datetime is already intialised, we are essentially taking the date and adding the time we want on the end 
                     Case 2
-                        screen = 1
-                        screeningDatetime = New DateTime(screeningDatetime.Year, screeningDatetime.Month, screeningDatetime.Day, 14, 30, 0)
+                        screen = 3
+                        screeningDatetime = New DateTime(screeningDatetime.Year, screeningDatetime.Month, screeningDatetime.Day, 16, 30, 0)
                 End Select
+                Dim seatingID As Integer
+                Dim screeningID As Integer
+
+
+                'search for empty indexes
+                For y = 0 To seatings.Count - 1
+                    If seatings(y) Is Nothing Then
+                        seatingID = y
+                    End If
+                Next
+                For y = 0 To screenings.Count - 1
+                    If screenings(y) Is Nothing Then
+                        screeningID = y
+                    End If
+                Next
+                seatings.Add(New Seating(seatingID))
+                screenings.Add(New Screening(screeningID, movieId, screen, screeningDatetime, seatingID))
             End If
         Next
-        seatings.Add(New Seating(seatingID))
-        screenings.Add(New Screening(screenings.Count, movieId, screen, screeningDatetime, seatingID))
+
         fltrScreeningsClb.SetItemChecked(0, True) 'this is done to initiate a quicksort before save to json
         SaveToJson(screenings, "Database\Screenings.json")
         SaveToJson(seatings, "Database\Seatings.json")

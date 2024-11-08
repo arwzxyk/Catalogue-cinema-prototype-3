@@ -95,20 +95,21 @@ Partial Class AdminScreeningsMenu
         '
         'scrnDateTime
         '
-        Me.scrnDateTime.CustomFormat = "dd/mm/yy"
-        Me.scrnDateTime.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.scrnDateTime.CustomFormat = "dd/MM/yy"
+        Me.scrnDateTime.Format = System.Windows.Forms.DateTimePickerFormat.Custom
         Me.scrnDateTime.Location = New System.Drawing.Point(705, 148)
         Me.scrnDateTime.Name = "scrnDateTime"
         Me.scrnDateTime.Size = New System.Drawing.Size(93, 22)
         Me.scrnDateTime.TabIndex = 17
+        Me.scrnDateTime.Value = New Date(2024, 11, 23, 0, 0, 0, 0)
         '
         'screenNoClb
         '
         Me.screenNoClb.FormattingEnabled = True
         Me.screenNoClb.Items.AddRange(New Object() {"Screen 1" & Global.Microsoft.VisualBasic.ChrW(9) & Global.Microsoft.VisualBasic.ChrW(9) & "(12:10)", "Screen 2" & Global.Microsoft.VisualBasic.ChrW(9) & Global.Microsoft.VisualBasic.ChrW(9) & "(14:40)", "Screen 3" & Global.Microsoft.VisualBasic.ChrW(9) & Global.Microsoft.VisualBasic.ChrW(9) & "(16:40)"})
-        Me.screenNoClb.Location = New System.Drawing.Point(562, 193)
+        Me.screenNoClb.Location = New System.Drawing.Point(562, 176)
         Me.screenNoClb.Name = "screenNoClb"
-        Me.screenNoClb.Size = New System.Drawing.Size(236, 55)
+        Me.screenNoClb.Size = New System.Drawing.Size(236, 72)
         Me.screenNoClb.TabIndex = 18
         '
         'Label2
