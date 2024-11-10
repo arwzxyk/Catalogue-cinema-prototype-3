@@ -11,6 +11,7 @@
         datetime = ndatetime
         seatingID = nseatingID
     End Sub
+
     Function getDate()
         Return datetime.Date
     End Function

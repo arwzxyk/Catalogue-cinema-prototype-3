@@ -1,4 +1,6 @@
-﻿Public Class Seat
+﻿Imports Microsoft.VisualBasic.ApplicationServices
+
+Public Class Seat
     Public Property SeatID As Integer
     Public Property Reference As String
     Public Property isAvailable As Boolean
@@ -18,6 +20,7 @@ Public Class Seating
         CreateSeating()
         seatingID = seatingID
     End Sub
+
     Private Sub CreateSeating()
         Dim rows As Char() = {"A", "B", "C", "D", "E"}
         Dim index As Integer = 0

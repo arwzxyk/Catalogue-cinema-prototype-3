@@ -90,19 +90,9 @@
                 Dim screeningID As Integer
 
 
-                'search for empty indexes
-                For y = 0 To seatings.Count - 1
-                    If seatings(y) Is Nothing Then
-                        seatingID = y
-                    End If
-                Next
-                For y = 0 To screenings.Count - 1
-                    If screenings(y) Is Nothing Then
-                        screeningID = y
-                    End If
-                Next
-                seatings.Add(New Seating(seatingID))
-                screenings.Add(New Screening(screeningID, movieId, screen, screeningDatetime, seatingID))
+
+                AddToList(Of Seating)(seatings, (New Seating(seatingID)))
+                AddToList(Of Screening)(screenings, (New Screening(screeningID, movieId, screen, screeningDatetime, seatingID)))
             End If
         Next
 

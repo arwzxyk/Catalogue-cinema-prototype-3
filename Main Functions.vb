@@ -40,6 +40,34 @@ Module Main_Functions
         End If
         Return valid
     End Function
+    Public Sub AddToList(Of T)(ByRef list As List(Of T), obj As Object)
+        'byref to edit og list
+        Dim index As Integer = list.Count
+        Dim count As Integer = 0
+        'set index to list count so if no empty index found it defaults to the end
+        'find empty indexes first
+        While count < list.Count AndAlso index = list.Count
+            If list(count) Is Nothing Then
+                index = count
+            Else
+                count += 1
+            End If
+        End While
+
+        'in future add try statements for exceptions
+
+        Dim objType As Type = obj.GetType
+        Dim objIDprop = objType.GetProperties().FirstOrDefault
+        'retrieves the first property of the class, this is always the ID
+        objIDprop.SetValue(obj, index)
+
+        'add to list
+        If index = list.Count Then
+            list.Add(obj)
+        Else
+            list(index) = obj
+        End If
+    End Sub
 
     Public Sub QuickSort(Of T)(ByRef list As List(Of T), ByVal indexLow As Integer, ByVal indexHigh As Integer, ByVal keySelector As Func(Of T, IComparable))
         ' this function will be used for data sorting for menu forms, the key selector is used to select what object attribute we would like to sort the data with
