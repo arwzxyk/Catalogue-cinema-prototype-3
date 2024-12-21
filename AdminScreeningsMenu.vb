@@ -39,6 +39,7 @@
                 Case 3
                     QuickSort(Of Screening)(screenings, 0, screenings.Count - 1, Function(s) s.datetime)
             End Select
+
             display_screenings()
         End If
 
@@ -89,10 +90,10 @@
                 Dim seatingID As Integer
                 Dim screeningID As Integer
 
+                Dim seatingNew As New Seating(seatingID)
 
-
-                AddToList(Of Seating)(seatings, (New Seating(seatingID)))
-                AddToList(Of Screening)(screenings, (New Screening(screeningID, movieId, screen, screeningDatetime, seatingID)))
+                AddToList(Of Seating)(seatings, seatingNew)
+                AddToList(Of Screening)(screenings, (New Screening(screeningID, movieId, screen, screeningDatetime, seatingNew.SeatingID)))
             End If
         Next
 
@@ -105,8 +106,8 @@
 
     Private Sub dltScreeningBtn_Click(sender As Object, e As EventArgs) Handles dltScreeningBtn.Click
         Dim index As Integer = CInt(dltScreeningTxt.Text)
-        If index >= 0 And index <= screenings.Count Then
-            screenings.Remove(screenings(index))
+        If index >= 0 And index < screenings.Count Then
+            screenings(index) = Nothing
             fltrScreeningsClb.SetItemChecked(0, True)
             SaveToJson(screenings, "Database\Screenings.json")
             MsgBox("Screening removed")

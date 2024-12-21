@@ -27,7 +27,7 @@ Public Class Seating
         For i = 0 To 4 'no of rows -1 for rows character array indexing
             For y = 1 To 16 'no of columns
                 Dim seatRef As String = rows(i) & y.ToString
-                SeatingList.Add(New Seat(index, seatRef, False))
+                SeatingList.Add(New Seat(index, seatRef, True))
                 index = index + 1
             Next
         Next

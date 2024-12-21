@@ -40,7 +40,7 @@ Module Main_Functions
         End If
         Return valid
     End Function
-    Public Sub AddToList(Of T)(ByRef list As List(Of T), obj As Object)
+    Public Sub AddToList(Of T)(ByRef list As List(Of T), ByRef obj As Object)
         'byref to edit og list
         Dim index As Integer = list.Count
         Dim count As Integer = 0

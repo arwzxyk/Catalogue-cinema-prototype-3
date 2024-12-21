@@ -5,7 +5,7 @@ Public Class SeatBooking
     Dim availableIcon As New System.Drawing.Bitmap(My.Resources.available)
     Dim selectedIcon As New System.Drawing.Bitmap(My.Resources.selected)
     Dim unavailableIcon As New System.Drawing.Bitmap(My.Resources.unavailable)
-    Dim sortedControls = SeatingPanel.Controls.Cast(Of Control)().OrderBy(Function(c) c.Left).ThenBy(Function(c) c.Top)
+    Dim sortedcontrols As IEnumerable(Of Control)
     Dim TotalSum As Double = 0 'price sum
     Dim seats As New List(Of Seat)()
     Dim seatings As List(Of Seating) = LoadFromJson(Of List(Of Seating))("Database\Seatings.json")
@@ -15,7 +15,9 @@ Public Class SeatBooking
     Public Sub New(screeningId As Integer)
 
         InitializeComponent()
+        Dim sortedControls = SeatingPanel.Controls.Cast(Of Control)().OrderBy(Function(c) c.Left).ThenBy(Function(c) c.Top)
         UscreeningID = screeningId
+
         Dim seatingID As Integer = screenings(screeningId).seatingID
         seats = seatings(seatingID).SeatingList 'find seatinglist
         For i = 0 To seats.Count - 1
@@ -76,7 +78,8 @@ Public Class SeatBooking
             'we change the booked seats to unavailable in order to be saved back into the seating list
         Next
         seatings(screenings(UscreeningID).seatingID) = Currentseating 'save to the seating list
-        bookings.Add(New Booking(bookingID, SharedData.CurrentUser.UserID, UscreeningID, movieID, bookedSeats, TotalSum))
+        Dim booking As New Booking(bookingID, SharedData.CurrentUser.UserID, UscreeningID, movieID, bookedSeats, TotalSum)
+        AddToList(Of Booking)(bookings, booking)
 
         'save back to json
         SaveToJson(bookings, "Database\Bookings.json")
@@ -84,5 +87,6 @@ Public Class SeatBooking
         MsgBox("Booking Created succesfully")
         Me.Close()
     End Sub
+
 
 End Class

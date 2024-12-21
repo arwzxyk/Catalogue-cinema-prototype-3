@@ -7,8 +7,8 @@
 
     Private Sub dltBookingBtn_Click(sender As Object, e As EventArgs) Handles dltBookingBtn.Click
         Dim index As Integer = CInt(controlBookingTxt.Text)
-        If index >= 0 And index <= bookings.Count Then
-            bookings.Remove(bookings(index))
+        If index >= 0 And index < bookings.Count Then
+            bookings(index) = Nothing
             SaveToJson(bookings, "Database\Bookings.json")
             MsgBox("Booking removed")
         Else
@@ -18,7 +18,7 @@
 
     Private Sub fcsBookingBtn_Click(sender As Object, e As EventArgs) Handles fcsBookingBtn.Click
         Dim index As Integer = CInt(controlBookingTxt.Text)
-        If index >= 0 And index <= bookings.Count Then
+        If index >= 0 And index < bookings.Count Then
             BookingDgv.DataSource = bookings(index)
         Else
             MsgBox("Booking does not exist")
@@ -51,4 +51,6 @@
         End Select
         display_bookings() 're-displays the new sorted list
     End Sub
+
+
 End Class

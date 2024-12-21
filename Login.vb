@@ -43,6 +43,7 @@ Public Class Login
                 SharedData.CurrentUser = users(userID)
                 MsgBox("Login success")
                 Form1.Show()
+                Form1.LoadForm()
 
                 If SharedData.CurrentUser.IsAdmin = True Then
                     Dim AdminForm As New Admin

@@ -11,7 +11,7 @@ Public Class Form1
         If SharedData.loggedIn = True Then
             'Login/reg page
 
-            UserLabel.Text = "Welcome "
+            UserLabel.Text = "Welcome " & SharedData.CurrentUser.username
             LgnBtn.Hide()
             RegBtn.Hide()
         ElseIf SharedData.loggedIn = False Then
@@ -61,7 +61,7 @@ or press Register, to register with us today"
 
     Private Sub Movie_selected()
         Dim screenings As List(Of Screening) = LoadFromJson(Of List(Of Screening))("Database\Screenings.json")
-        While selectMovieID <> -1
+        If selectMovieID <> -1 Then
             slctMovieCB.Text = movies(selectMovieID).Title
             slctScreeningCB.Enabled = True
             slctScreeningCB.Text = "Select a screening"
@@ -71,7 +71,7 @@ or press Register, to register with us today"
                 End If
             Next
 
-        End While
+        End If
     End Sub
     Private Sub Movie_Click(sender As Object, e As EventArgs)
         selectMovieID = CInt(sender.Tag) - 1
@@ -83,6 +83,8 @@ or press Register, to register with us today"
     Private Sub scrnsearchBtn_Click(sender As Object, e As EventArgs) Handles scrnsearchBtn.Click
         Dim screenings As List(Of Screening) = LoadFromJson(Of List(Of Screening))("Database\Screenings.json")
         Dim selectmovieScreenings As New List(Of Screening)
+        ScreeningsFLPanel.Controls.Clear()
+
         For i = 0 To movies.Count - 1
             If movies(i).Title = mvscreenTxt.Text Then
                 selectMovieID = i
@@ -101,11 +103,11 @@ or press Register, to register with us today"
             'sort by date time so the buttons are in this order
             For i = 0 To selectmovieScreenings.Count - 1
                 Dim screeningBtn As New Button
-                screeningBtn.Font = New Font("Times New Roman", 12)
+                screeningBtn.Font = New Font("Times New Roman", 10)
                 screeningBtn.Text = "Date: " & selectmovieScreenings(i).datetime & "
 Screen No: " & selectmovieScreenings(i).Screen
                 screeningBtn.Tag = selectmovieScreenings(i).screeningID
-                screeningBtn.Size = New Size(80, 30)
+                screeningBtn.AutoSize = True
                 screeningBtn.TextAlign = ContentAlignment.MiddleCenter
 
                 ' adding buttons for each screening to panel, event handler handles click
@@ -121,7 +123,11 @@ Screen No: " & selectmovieScreenings(i).Screen
         Dim screenings As List(Of Screening) = LoadFromJson(Of List(Of Screening))("Database\Screenings.json")
         Dim selectscreening As Screening = screenings(CInt(sender.tag))
         'passes all attributes of selected screening
+        TabControl1.SelectedIndex = 2
 
+        selectMovieID = selectscreening.movieID
+        Movie_selected()
+        slctScreeningCB.SelectedItem = selectscreening.datetime
     End Sub
 
 
@@ -152,13 +158,16 @@ Screen No: " & selectmovieScreenings(i).Screen
             End If
         End While
         Dim newseatBooking As New SeatBooking(count)
+        newseatBooking.TopLevel = False
         bookSeatsPanel.Controls.Clear()
         newseatBooking.FormBorderStyle = Windows.Forms.FormBorderStyle.None
+
         newseatBooking.Dock = DockStyle.Fill
         bookSeatsPanel.Controls.Add(newseatBooking)
         newseatBooking.Show()
     End Sub
 
+    Private Sub slctScreeningCB_SelectedIndexChanged(sender As Object, e As EventArgs) Handles slctScreeningCB.SelectedIndexChanged
 
-
+    End Sub
 End Class

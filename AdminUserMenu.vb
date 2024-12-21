@@ -9,8 +9,8 @@ Public Class AdminUserMenu
 
     Private Sub dltUserBtn_Click(sender As Object, e As EventArgs) Handles dltUserBtn.Click
         Dim index As Integer = CInt(controlUserTxt.Text)
-        If index >= 0 And index <= users.Count Then
-            users.Remove(users(index))
+        If index >= 0 And index < users.Count Then
+            users(index) = Nothing
             SaveToJson(users, "Database\Users.json")
             MsgBox("User removed")
         Else
@@ -20,7 +20,7 @@ Public Class AdminUserMenu
 
     Private Sub fcsUserBtn_Click(sender As Object, e As EventArgs) Handles fcsUserBtn.Click
         Dim index As Integer = CInt(controlUserTxt.Text)
-        If Index >= 0 And Index <= users.Count Then
+        If index >= 0 And index < users.Count Then
             UsersDgv.DataSource = users(index)
             UsersDgv.Columns("password").Visible = False
         Else
@@ -35,4 +35,6 @@ Public Class AdminUserMenu
     Private Sub AdminUserMenu_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         display_users()
     End Sub
+
+
 End Class
