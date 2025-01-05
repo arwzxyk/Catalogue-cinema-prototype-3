@@ -15,11 +15,24 @@ Public Class SeatBooking
     Public Sub New(screeningId As Integer)
 
         InitializeComponent()
-        Dim sortedControls = SeatingPanel.Controls.Cast(Of Control)().OrderBy(Function(c) c.Left).ThenBy(Function(c) c.Top)
+
+        For Each picturebox As PictureBox In SeatingPanel.Controls
+            If picturebox.Image Is Nothing Then
+                SeatingPanel.Controls.Remove(picturebox)
+            End If
+        Next
+        'for some reason there are some hidden pictureboxes that mess up the sorted controls, im too lazy to redo the panel so i just delete them
+
+        sortedcontrols = SeatingPanel.Controls.
+                    OfType(Of PictureBox)().
+                     OrderBy(Function(c) c.Left).
+                     ThenBy(Function(c) c.Top)
+
         UscreeningID = screeningId
 
         Dim seatingID As Integer = screenings(screeningId).seatingID
         seats = seatings(seatingID).SeatingList 'find seatinglist
+
         For i = 0 To seats.Count - 1
             If TypeOf sortedControls(i) Is PictureBox Then 'searches for every picture box in form
                 Dim picturebox As PictureBox = CType(sortedControls(i), PictureBox)
@@ -32,14 +45,17 @@ Public Class SeatBooking
                     picturebox.Enabled = False
                     picturebox.Image = unavailableIcon
                 End If
-                picturebox.Tag = i ' I attach the seat id to the picturebox of the seat
+
             End If
         Next
+
     End Sub
 
 
     Private Sub PictureBox_Click(sender As Object, e As EventArgs)
         Dim pb As PictureBox = CType(sender, PictureBox)
+        'select seats and adds prices
+
         If Image.Equals(pb.Image, availableIcon) Then
             pb.Image = selectedIcon
             TotalSum = TotalSum + 10.2
@@ -58,27 +74,26 @@ Public Class SeatBooking
         Dim movieID As Integer = screenings(UscreeningID).movieID
         Dim Currentseating As Seating = seatings(screenings(UscreeningID).seatingID) 'current seating arrangement
         Dim bookedSeats As New List(Of Seat)()
+        Dim currentuserID As Integer = SharedData.CurrentUser.UserID
+
         For i = 0 To sortedControls.count - 1
-            If TypeOf sortedControls(i) Is PictureBox Then
-                Dim picturebox As PictureBox = CType(sortedControls(i), PictureBox)
-                If Image.Equals(picturebox, selectedIcon) Then
+            If TypeOf sortedcontrols(i) Is PictureBox Then
+                Dim picturebox As PictureBox = CType(sortedcontrols(i), PictureBox)
+
+                If Image.Equals(picturebox.Image, selectedIcon) Then
                     seats(i).isAvailable = False
+                    'we change the booked seats to unavailable in order to be saved back into the seating list
                     bookedSeats.Add(seats(i))
                 End If
             End If
-        Next
-        For i As Integer = 0 To bookings.Count - 1
-            If bookings(i) Is Nothing Then
-                bookingID = i
-            End If
+
         Next
 
-        For Each seat As Seat In bookedSeats
-            Currentseating.SeatingList(seat.SeatID).isAvailable = False
-            'we change the booked seats to unavailable in order to be saved back into the seating list
-        Next
         seatings(screenings(UscreeningID).seatingID) = Currentseating 'save to the seating list
-        Dim booking As New Booking(bookingID, SharedData.CurrentUser.UserID, UscreeningID, movieID, bookedSeats, TotalSum)
+        Dim booking As New Booking(bookingID, currentuserID, UscreeningID, movieID, bookedSeats, TotalSum)
+        If bookings Is Nothing Then
+            bookings = New List(Of Booking)
+        End If
         AddToList(Of Booking)(bookings, booking)
 
         'save back to json
@@ -88,5 +103,23 @@ Public Class SeatBooking
         Me.Close()
     End Sub
 
+    Private Sub PictureBox38_Click(sender As Object, e As EventArgs)
 
+    End Sub
+
+    Private Sub SeatingPanel_Paint(sender As Object, e As PaintEventArgs) Handles SeatingPanel.Paint
+
+    End Sub
+
+    Private Sub SumLabel_Click(sender As Object, e As EventArgs) Handles SumLabel.Click
+
+    End Sub
+
+    Private Sub SeatBooking_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+    End Sub
+
+    Private Sub PictureBox95_Click(sender As Object, e As EventArgs) Handles PictureBox95.Click
+
+    End Sub
 End Class

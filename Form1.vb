@@ -46,6 +46,8 @@ or press Register, to register with us today"
         Next
 
         'Bookings page
+        slctMovieCB.Items.Clear()
+
         For Each movie In movies
             slctMovieCB.Items.Add(movie.Title)
 
@@ -54,8 +56,23 @@ or press Register, to register with us today"
         Next
         slctMovieCB.Text = "Select a movie"
         slctScreeningCB.Enabled = False
-        slctScreeningCB.Text = "Please select a movie first"
+        slctScreeningCB.Text = "Please select a valid movie first"
 
+
+    End Sub
+    Private Sub slctmovieCB_textchanged(sender As Object, e As EventArgs) Handles slctMovieCB.TextChanged
+        Dim moviefound As Boolean = False
+        Dim i As Integer = 0
+        While moviefound = False And i < movies.Count
+
+            If slctMovieCB.Text = movies(i).Title Then
+                selectMovieID = i
+                moviefound = True
+                Movie_selected()
+            Else
+                i += 1
+            End If
+        End While
 
     End Sub
 
@@ -65,6 +82,8 @@ or press Register, to register with us today"
             slctMovieCB.Text = movies(selectMovieID).Title
             slctScreeningCB.Enabled = True
             slctScreeningCB.Text = "Select a screening"
+            slctScreeningCB.Items.Clear()
+
             For i = 0 To screenings.Count - 1
                 If screenings(i).movieID = selectMovieID Then
                     slctScreeningCB.Items.Add(screenings(i).datetime)
@@ -147,27 +166,31 @@ Screen No: " & selectmovieScreenings(i).Screen
 
 
     Private Sub BookSeatBtn_Click(sender As Object, e As EventArgs) Handles BookSeatBtn.Click
-        Dim screenings As List(Of Screening) = LoadFromJson(Of List(Of Screening))("Database\Screenings.json")
-        Dim count As Integer = 0
-        Dim screeningIDFound As Integer = -1
-        While screeningIDFound = -1 And count < screenings.Count
-            If screenings(count).datetime = DateTime.Parse(slctScreeningCB.Text) And screenings(count).movieID = selectMovieID Then
-                screeningIDFound = count
-            Else
-                count = count + 1
-            End If
-        End While
-        Dim newseatBooking As New SeatBooking(count)
-        newseatBooking.TopLevel = False
-        bookSeatsPanel.Controls.Clear()
-        newseatBooking.FormBorderStyle = Windows.Forms.FormBorderStyle.None
+        If SharedData.CurrentUser IsNot Nothing Then
+            Dim screenings As List(Of Screening) = LoadFromJson(Of List(Of Screening))("Database\Screenings.json")
+            Dim count As Integer = 0
+            Dim screeningIDFound As Integer = -1
+            While screeningIDFound = -1 And count < screenings.Count
+                If screenings(count).datetime = DateTime.Parse(slctScreeningCB.Text) And screenings(count).movieID = selectMovieID Then
+                    screeningIDFound = count
+                Else
+                    count = count + 1
+                End If
+            End While
+            Dim newseatBooking As New SeatBooking(count)
 
-        newseatBooking.Dock = DockStyle.Fill
-        bookSeatsPanel.Controls.Add(newseatBooking)
-        newseatBooking.Show()
+            newseatBooking.TopLevel = False
+            newseatBooking.FormBorderStyle = FormBorderStyle.None
+            newseatBooking.Dock = DockStyle.Fill
+            bookSeatsPanel.Controls.Clear()
+            bookSeatsPanel.Controls.Add(newseatBooking)
+            newseatBooking.Show()
+        Else
+            MsgBox("Log in first")
+        End If
+
+
     End Sub
 
-    Private Sub slctScreeningCB_SelectedIndexChanged(sender As Object, e As EventArgs) Handles slctScreeningCB.SelectedIndexChanged
 
-    End Sub
 End Class

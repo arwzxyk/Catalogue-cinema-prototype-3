@@ -88,6 +88,7 @@ Partial Class AdminScreeningsMenu
         Me.ScreeningDgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.ScreeningDgv.Location = New System.Drawing.Point(3, 38)
         Me.ScreeningDgv.Name = "ScreeningDgv"
+        Me.ScreeningDgv.ReadOnly = True
         Me.ScreeningDgv.RowHeadersWidth = 51
         Me.ScreeningDgv.RowTemplate.Height = 24
         Me.ScreeningDgv.Size = New System.Drawing.Size(553, 430)

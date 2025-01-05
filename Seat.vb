@@ -15,18 +15,19 @@ Public Class Seating
     Public Property SeatingID As Integer
     Public Property SeatingList As List(Of Seat)
 
-    Public Sub New(seatingID As Integer)
+    Public Sub New(nseatingID As Integer)
+        SeatingID = nseatingID
         SeatingList = New List(Of Seat)() 'create empty list to add empty seats
         CreateSeating()
-        seatingID = seatingID
+
     End Sub
 
     Private Sub CreateSeating()
         Dim rows As Char() = {"A", "B", "C", "D", "E"}
         Dim index As Integer = 0
-        For i = 0 To 4 'no of rows -1 for rows character array indexing
-            For y = 1 To 16 'no of columns
-                Dim seatRef As String = rows(i) & y.ToString
+        For y = 0 To 4 'no of rows -1 for rows character array indexing
+            For x = 1 To 16 'no of columns
+                Dim seatRef As String = (rows(y) & x.ToString)
                 SeatingList.Add(New Seat(index, seatRef, True))
                 index = index + 1
             Next

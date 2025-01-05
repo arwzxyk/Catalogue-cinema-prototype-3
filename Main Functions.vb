@@ -46,11 +46,13 @@ Module Main_Functions
         Dim count As Integer = 0
         'set index to list count so if no empty index found it defaults to the end
         'find empty indexes first
-        While count < list.Count AndAlso index = list.Count
-            If list(count) Is Nothing Then
-                index = count
-            Else
-                count += 1
+        While count < list.Count
+            If index = list.Count Then
+                If list(count) Is Nothing Then
+                    index = count
+                Else
+                    count += 1
+                End If
             End If
         End While
 

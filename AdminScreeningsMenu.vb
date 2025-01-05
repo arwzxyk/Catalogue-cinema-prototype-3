@@ -1,9 +1,12 @@
-﻿Public Class AdminScreeningsMenu
+﻿Imports Newtonsoft.Json
+
+Public Class AdminScreeningsMenu
     Dim screenings As List(Of Screening) = LoadFromJson(Of List(Of Screening))("Database\Screenings.json")
     Dim movies As List(Of movie) = LoadFromJson(Of List(Of movie))("Database\movies.json")
     Dim screen As Integer
     Dim screeningDatetime As DateTime
     Sub display_screenings()
+        Me.Refresh()
         ScreeningDgv.DataSource = screenings
     End Sub
 
@@ -11,7 +14,7 @@
         If screenings Is Nothing Then
             screenings = New List(Of Screening)()
         End If
-        'fltrScreeningsClb.SetItemChecked(0, True) 'this automatically sorts the screenings by screeningID
+        ' fltrScreeningsClb.SetItemChecked(0, True) 'this automatically sorts the screenings by screeningID
         For Each movie In movies
             crtScrnMovieTxt.Items.Add(movie.Title)
         Next
@@ -34,8 +37,10 @@
                     QuickSort(Of Screening)(screenings, 0, screenings.Count - 1, Function(s) s.screeningID)
                 Case 1
                     QuickSort(Of Screening)(screenings, 0, screenings.Count - 1, Function(s) s.movieID)
+                    MsgBox(JsonConvert.SerializeObject(screenings, Formatting.Indented))
                 Case 2
                     QuickSort(Of Screening)(screenings, 0, screenings.Count - 1, Function(s) s.Screen)
+                    MsgBox(JsonConvert.SerializeObject(screenings, Formatting.Indented))
                 Case 3
                     QuickSort(Of Screening)(screenings, 0, screenings.Count - 1, Function(s) s.datetime)
             End Select
@@ -87,8 +92,8 @@
                         screen = 3
                         screeningDatetime = New DateTime(screeningDatetime.Year, screeningDatetime.Month, screeningDatetime.Day, 16, 30, 0)
                 End Select
-                Dim seatingID As Integer
-                Dim screeningID As Integer
+                Dim seatingID As Integer = seatings.Count
+                Dim screeningID As Integer = screenings.Count
 
                 Dim seatingNew As New Seating(seatingID)
 
@@ -97,7 +102,8 @@
             End If
         Next
 
-        fltrScreeningsClb.SetItemChecked(0, True) 'this is done to initiate a quicksort before save to json
+        fltrScreeningsClb.SetItemChecked(0, True)
+        QuickSort(Of Seating)(seatings, 0, seatings.Count - 1, Function(s) s.SeatingID) 'this is done to initiate a quicksort before save to json
         SaveToJson(screenings, "Database\Screenings.json")
         SaveToJson(seatings, "Database\Seatings.json")
         MsgBox("Screening added")

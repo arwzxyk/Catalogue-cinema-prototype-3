@@ -493,9 +493,10 @@ Partial Class Form1
         '
         'bookSeatsPanel
         '
-        Me.bookSeatsPanel.Location = New System.Drawing.Point(256, 45)
+        Me.bookSeatsPanel.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
+        Me.bookSeatsPanel.Location = New System.Drawing.Point(271, 22)
         Me.bookSeatsPanel.Name = "bookSeatsPanel"
-        Me.bookSeatsPanel.Size = New System.Drawing.Size(929, 499)
+        Me.bookSeatsPanel.Size = New System.Drawing.Size(887, 525)
         Me.bookSeatsPanel.TabIndex = 15
         '
         'Label2
